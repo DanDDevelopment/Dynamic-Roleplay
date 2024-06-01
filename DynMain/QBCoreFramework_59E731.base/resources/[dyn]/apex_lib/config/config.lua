@@ -113,7 +113,7 @@ ApexConfig.Progressbar = 'qbcore'
     - ps (project sloth)
     - ox_lib
 ]]--
-ApexConfig.Notification = 'apex_lib'
+ApexConfig.Notification = 'qbcore'
 -------------------------------------
 
 -- PAYMENT SYSTEMS
@@ -245,7 +245,7 @@ ApexConfig.Keylock = 'qb-vehiclekeys'
     - ox_lib
     - ps (project sloth)
 ]]--
-ApexConfig.TextUI = 'apex_lib'
+ApexConfig.TextUI = 'qbcore'
 -------------------------------------
 
 
@@ -255,7 +255,7 @@ ApexConfig.TextUI = 'apex_lib'
     - If chat is set to true - Please remove any other chat resource from your server
     - Failure to do so will result in chat conflicts
 ]]--
-ApexConfig.Chat = false
+ApexConfig.Chat = true
 
 --[[
     - To use our overlay chat (me, med, ool as 3d text), set the settings below to true
@@ -271,7 +271,7 @@ ApexConfig.OverlayChat = {              -- Also know as 3D Chat
         coordsY = 0,                    -- Move text forward or backward
         coordsZ = 1.1                   -- Move text up or down
     },
-    Webhook = 'WEBHOOK_HERE',           -- Discord webhook for logging
+    Webhook = 'https://discord.com/api/webhooks/1246344774080790548/GU5FV8XzToZUKxLsIfTYqNDpYukAuabg5qx5_O-bGymHK31xmG-uRrJiyD9l13AUtapC',           -- Discord webhook for logging
 }
 -------------------------------------
 
