@@ -408,8 +408,8 @@ Config.Features = {
         },
         -- Misson Row Helipad
         {
-            spawner = vector4(463.93, -982.16, 43.6916, 90.0),
-            spawnpoint = vector4(449.23, -981.22, 43.6913, 90.0),
+            spawner = vector4(467.664, -1002.19, 45.209, 90.0),
+            spawnpoint = vector4(476.422, -1003.297, 45.911, 270),
             vehicles = {
                 [1] = { vehiclename = 'Police Helicopter', vehiclemodel = 'polmav', grade = 0 },
             },

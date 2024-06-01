@@ -207,7 +207,7 @@ RegisterNUICallback("sendToJail", function(data, cb)
                     TriggerServerEvent('cqc-mugshot:server:triggerSuspect', targetSourceId)
                 end
                 Citizen.Wait(5000)
-                -- Uses qb-policejob JailPlayer event
+                -- Uses apex_lawenforcement JailPlayer event
                 TriggerServerEvent("police:server:JailPlayer", targetSourceId, sentence)
             end
         end

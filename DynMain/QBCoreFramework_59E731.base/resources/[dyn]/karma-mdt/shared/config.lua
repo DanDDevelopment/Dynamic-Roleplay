@@ -72,8 +72,8 @@ Config.DojJobs = {
     ['judge'] = true
 }
 
--- This is a workaround solution because the qb-menu present in qb-policejob fills in an impound location and sends it to the event. 
--- If the impound locations are modified in qb-policejob, the changes must also be implemented here to ensure consistency.
+-- This is a workaround solution because the qb-menu present in apex_lawenforcement fills in an impound location and sends it to the event. 
+-- If the impound locations are modified in apex_lawenforcement, the changes must also be implemented here to ensure consistency.
 
 Config.ImpoundLocations = {
     [1] = vector4(436.68, -1007.42, 27.32, 180.0),
