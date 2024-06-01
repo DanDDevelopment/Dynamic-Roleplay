@@ -398,8 +398,8 @@ Config.Features = {
         TeleportIntoVehicle = true,
         -- Missin Row (Gabz Garage)
         {
-            spawner = vector4(461.09, -998.61, 25.7, 0.0),
-            spawnpoint = vector4(458.88, -992.92, 25.7, 0.0),
+            spawner = vector4(446.00, -978.61, 25.706, 90.171),
+            spawnpoint = vector4(445.012, -973.033, 25.706, 265.718),
             vehicles = {
                 [1] = { vehiclename = 'Police 1', vehiclemodel = 'police', grade = 0 },
                 [2] = { vehiclename = 'Police 2', vehiclemodel = 'police2', grade = 1 },
