@@ -1024,18 +1024,18 @@ CreateThread(function()
 end)
 
 -- Please don't remove me i wanna be here
-RegisterCommand('cuzwhynot', function()
-    print('Kane Github : rohKane')
-    print('Kane Discord : roh_kane')
-    print('Kane Github : rohKane')
-    print('Kane Discord : roh_kane')
-end, false)
+--RegisterCommand('cuzwhynot', function()
+--    print('Kane Github : rohKane')
+--    print('Kane Discord : roh_kane')
+--    print('Kane Github : rohKane')
+--    print('Kane Discord : roh_kane')
+--end, false)
 
 -- Minimap update
 CreateThread(function()
     while true do
         SetRadarBigmapEnabled(false, false)
-        SetRadarZoom(1000)
+--        SetRadarZoom(1000)
         Wait(500)
     end
 end)
