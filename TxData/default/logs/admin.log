@@ -1,0 +1,15 @@
+
+================================================================
+======== txAdmin v7.1.0 atop fxserver 8216 Starting - 5/31/2024, 7:59:22 AM
+================================================================
+[08:04:48][DanDiablosTV] created admins file
+[08:13:18][DanDiablosTV] Changing global settings via setup stepper and started Deployer.
+[08:13:32][DanDiablosTV] Setting recipe.
+[08:14:26][DanDiablosTV] Running recipe.
+[08:20:27][DanDiablosTV] Completed and committed server deploy.
+[08:27:08][DanDiablosTV] executed "RESTART SERVER"
+[08:40:42][DanDiablosTV] executed "RESTART SERVER"
+[08:44:16][DanDiablosTV] executed "RESTART SERVER"
+[09:01:45][DanDiablosTV] executed "RESTART SERVER"
+[09:21:51][DanDiablosTV] executed "RESTART SERVER"
+[15:50:38][DanDiablosTV] executed "RESTART SERVER"
