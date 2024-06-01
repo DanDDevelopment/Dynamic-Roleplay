@@ -40,8 +40,8 @@ Config.Options = {
     },
     ------------------------------------------------------------------------------------------------
     Header = {
-        ["TITLE"] = "Server Name Menu",
-        ["SUBTITLE"] = "The beautiful city",
+        ["TITLE"] = "Dynamic Roleplay",
+        ["SUBTITLE"] = "discord.gg/dynamicrp",
         ["MAP"] = "Map",
         ["GAME"] = "Exit Game",
         ["LEAVE"] = "Return to Server List",
@@ -52,9 +52,9 @@ Config.Options = {
         ["GALLERY"] = "Gallery",
         ["KEYBIND"] = "Main Keybinds",
         ["EDITOR"] = "Rockstar Editor",
-        ["SERVER_NAME"] = "Server Name",
+        ["SERVER_NAME"] = "Dynamic Roleplay",
         ["SERVER_TEXT"] = "Welcome to our city",
-        ["SERVER_DISCORD"] = "discordlink.gg"
+        ["SERVER_DISCORD"] = "discord.gg/dynamicrp"
     }
     ------------------------------------------------------------------------------------------------
 }
