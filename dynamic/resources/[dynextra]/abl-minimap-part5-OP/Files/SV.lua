@@ -1,6 +1,6 @@
 -- if Config.Core.core == 'qb' and Config.Options.useitem == 'yes' then
---     QBCore = exports[Config.Core.corename]:GetCoreObject()
---     QBCore.Functions.CreateUseableItem(Config.UseName.itemName, function(source, item)
+--     DynCore = exports[Config.Core.corename]:GetCoreObject()
+--     DynCore.Functions.CreateUseableItem(Config.UseName.itemName, function(source, item)
 --         TriggerClientEvent('abl-minimapsystem:client:showlib', source, item.name)
 --     end)
 -- elseif Config.Core.core == 'esx' and Config.Options.useitem == 'yes' then

@@ -1,7 +1,7 @@
 
 RegisterNetEvent("snipe-menu:client:setWeather", function(weatherName)
     if hasAdminPerms then
-        if (Config.Core == "QBCore" and Config.WeatherScript ~= "cd_easytime") or Config.WeatherScript == "renewed" then
+        if (Config.Core == "DynCore" and Config.WeatherScript ~= "cd_easytime") or Config.WeatherScript == "renewed" then
             TriggerServerEvent("dyn-weathersync:server:setWeather", weatherName) -- used to change the weather if you use dyn-weathersync (edit if you use another weather script)
         elseif Config.WeatherScript == "cd_easytime" or Config.Core == "ESX" then -- this is configured for easytime
             local values = {
@@ -22,7 +22,7 @@ end)
 
 RegisterNetEvent("snipe-menu:client:setTime", function(hours, mins)
     if hasAdminPerms then
-        if (Config.Core == "QBCore" and Config.WeatherScript ~= "cd_easytime") or Config.WeatherScript == "renewed" then
+        if (Config.Core == "DynCore" and Config.WeatherScript ~= "cd_easytime") or Config.WeatherScript == "renewed" then
             TriggerServerEvent("dyn-weathersync:server:setTime", hours, mins) -- used to change the time if you use dyn-weathersync (edit if you use another weather script)
         elseif Config.WeatherScript == "cd_easytime" or Config.Core == "ESX" then -- this is configured for easytime
             local values = {

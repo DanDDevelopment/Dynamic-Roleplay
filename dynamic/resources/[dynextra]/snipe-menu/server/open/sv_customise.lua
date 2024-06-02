@@ -1,12 +1,12 @@
-QBCore = nil
+DynCore = nil
 ESX = nil
 invalid = false
 
 
-if Config.Core == "QBCore" then
-    TriggerEvent(Config.Core..':GetObject', function(obj) QBCore = obj end)
-    if QBCore == nil then
-        QBCore = exports[Config.CoreFolderName]:GetCoreObject()
+if Config.Core == "DynCore" then
+    TriggerEvent(Config.Core..':GetObject', function(obj) DynCore = obj end)
+    if DynCore == nil then
+        DynCore = exports[Config.CoreFolderName]:GetCoreObject()
     end
 elseif Config.Core == "ESX" then
     local status, errorMsg = pcall(function() ESX = exports[Config.CoreFolderName]:getSharedObject() end)
@@ -29,7 +29,7 @@ function GetPlayerIdentifiersList(source, type)
 end
 
 function ShowNotification(src, msg, type)
-    if Config.Core == "QBCore" then
+    if Config.Core == "DynCore" then
         TriggerClientEvent(Config.Core..':Notify', src, msg, type)
     elseif Config.Core == "ESX" then
         TriggerClientEvent('esx:showNotification', src, msg)

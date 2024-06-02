@@ -8,15 +8,15 @@
 ## FiveM Documentation
 ## https://aka.cfx.re/server-commands
 
-## QBCore Documentation
-## https://docs.qbcore.org
+## DynCore Documentation
+## https://docs.DynCore.org
 
 ## You CAN edit the following:
 endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
 sv_maxclients 48
 set steam_webApiKey "none"
-sets tags "default, deployer, qbcore, qb-core"
+sets tags "default, deployer, DynCore, qb-core"
 
 ## You MAY edit the following:
 sv_licenseKey "cfxk_1rTSdgRGkWJbZMkQE4ZfV_46o7yR"
@@ -36,10 +36,10 @@ setr voice_defaultVolume 0.3
 setr voice_enableRadioAnim 1
 setr voice_syncData 1
 
-# QBCore locale config
+# DynCore locale config
 setr qb_locale "en"
 
-# QBCore UseTarget
+# DynFW UseTarget
 setr UseTarget true
 
 # These resources will start by default.
@@ -51,7 +51,7 @@ ensure basic-gamemode
 ensure hardcap
 ensure baseevents
 
-# QBCore & Extra stuff
+# DynFW & Extra stuff
 ensure dyn-core
 ensure ox_lib
 ensure [dyn]
@@ -66,14 +66,14 @@ ensure [dyncars]
 add_ace group.admin command allow # allow all commands
 add_principal identifier.fivem:8846237 group.admin #DanDiablosTV
 add_principal identifier.discord:608284540317728786 group.admin #DanDiablosTV
-add_principal identifier.fivem:8846237 qbcore.god #DanDiablosTV
+add_principal identifier.fivem:8846237 DynCore.god #DanDiablosTV
 # Resources
 add_ace resource.qb-core command allow # Allow qb-core to execute commands
 
 # Gods
-add_ace qbcore.god command allow # Allow all commands
+add_ace DynCore.god command allow # Allow all commands
 
 # Inheritance
-add_principal qbcore.god group.admin # Allow gods access to the main admin group used to get all default permissions
-add_principal qbcore.god qbcore.admin # Allow gods access to admin commands
-add_principal qbcore.admin qbcore.mod # Allow admins access to mod commands
+add_principal DynCore.god group.admin # Allow gods access to the main admin group used to get all default permissions
+add_principal DynCore.god DynCore.admin # Allow gods access to admin commands
+add_principal DynCore.admin DynCore.mod # Allow admins access to mod commands

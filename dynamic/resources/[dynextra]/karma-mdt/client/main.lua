@@ -1,4 +1,4 @@
-QBCore = exports['dyn-core']:GetCoreObject()
+DynCore = exports['dyn-core']:GetCoreObject()
 local PlayerData = {}
 local CurrentCops = 0
 local isOpen = false
@@ -21,30 +21,30 @@ CreateThread(function()
 end)
 
 
--- Events from qbcore
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-    PlayerData = QBCore.Functions.GetPlayerData()
+-- Events from DynCore
+RegisterNetEvent('DynCore:Client:OnPlayerLoaded', function()
+    PlayerData = DynCore.Functions.GetPlayerData()
     callSign = PlayerData.metadata.callsign
 end)
 
-RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
+RegisterNetEvent('DynCore:Client:OnPlayerUnload', function()
     TriggerServerEvent("karma-mdt:server:OnPlayerUnload")
     PlayerData = {}
 end)
 
-RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
+RegisterNetEvent('DynCore:Client:OnJobUpdate', function(JobInfo)
     PlayerData.job = JobInfo
 end)
 
-RegisterNetEvent('QBCore:Client:OnGangUpdate', function(GangInfo)
+RegisterNetEvent('DynCore:Client:OnGangUpdate', function(GangInfo)
     PlayerData.gang = GangInfo
 end)
 
-RegisterNetEvent("QBCore:Client:SetDuty", function(job, state)
+RegisterNetEvent("DynCore:Client:SetDuty", function(job, state)
     if AllowedJob(job) then
         TriggerServerEvent("karma-mdt:server:ToggleDuty")
 	TriggerServerEvent("karma-mdt:server:ClockSystem")
-        TriggerServerEvent('QBCore:ToggleDuty')
+        TriggerServerEvent('DynCore:ToggleDuty')
         if PlayerData.job.name == "police" or PlayerData.job.type == "leo" then
             TriggerServerEvent("police:server:UpdateCurrentCops")
         end
@@ -61,14 +61,14 @@ RegisterNetEvent('police:SetCopCount', function(amount)
     CurrentCops = amount
 end)
 
-RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
+RegisterNetEvent('DynCore:Player:SetPlayerData', function(val)
     PlayerData = val
 end)
 
 AddEventHandler('onResourceStart', function(resourceName)
     if GetCurrentResourceName() ~= resourceName then return end
     Wait(150)
-    PlayerData = QBCore.Functions.GetPlayerData()
+    PlayerData = DynCore.Functions.GetPlayerData()
     callSign = PlayerData.metadata.callsign
 end)
 
@@ -90,14 +90,14 @@ RegisterKeyMapping('mdt', 'Open Police MDT', 'keyboard', 'k')
 
 RegisterCommand('mdt', function()
     local plyPed = PlayerPedId()
-    PlayerData = QBCore.Functions.GetPlayerData()
+    PlayerData = DynCore.Functions.GetPlayerData()
     if not PlayerData.metadata["isdead"] and not PlayerData.metadata["inlaststand"] and not PlayerData.metadata["ishandcuffed"] and not IsPauseMenuActive() then
         if GetJobType(PlayerData.job.name) ~= nil then
             TriggerServerEvent('mdt:server:openMDT')
             TriggerServerEvent('mdt:requestOfficerData')
         end
     else
-        QBCore.Functions.Notify("Can't do that!", "error")
+        DynCore.Functions.Notify("Can't do that!", "error")
     end
 end, false)
 
@@ -205,7 +205,7 @@ RegisterNetEvent('mdt:client:dashboardbulletin', function(sentData)
 end)
 
 RegisterNetEvent('mdt:client:dashboardWarrants', function()
-    QBCore.Functions.TriggerCallback("mdt:server:getWarrants", function(data)
+    DynCore.Functions.TriggerCallback("mdt:server:getWarrants", function(data)
         if data then
             SendNUIMessage({ type = "warrants", data = data })
         end
@@ -278,7 +278,7 @@ end)
 RegisterNUICallback("searchProfiles", function(data, cb)
     local p = promise.new()
 
-    QBCore.Functions.TriggerCallback('mdt:server:SearchProfile', function(result)
+    DynCore.Functions.TriggerCallback('mdt:server:SearchProfile', function(result)
         p:resolve(result)
     end, data.name)
 
@@ -313,7 +313,7 @@ RegisterNUICallback("getProfileData", function(data, cb)
     local getProfileDataPromise = function(data)
         if p then return end
         p = promise.new()
-        QBCore.Functions.TriggerCallback('mdt:server:GetProfileData', function(result)
+        DynCore.Functions.TriggerCallback('mdt:server:GetProfileData', function(result)
             p:resolve(result)
         end, data)
         return Citizen.Await(p)
@@ -325,7 +325,7 @@ RegisterNUICallback("getProfileData", function(data, cb)
 
     for i=1,#vehicles do
         local vehicle=result.vehicles[i]
-        local vehData = QBCore.Shared.Vehicles[vehicle['vehicle']]
+        local vehData = DynCore.Shared.Vehicles[vehicle['vehicle']]
         
         if vehData == nil then
             print("Vehicle not found for profile:", vehicle['vehicle']) -- Do not remove print, is a guide for a nil error. 
@@ -394,7 +394,7 @@ RegisterNUICallback("sendFine", function(data, cb)
     
     -- Gets the player id from the citizenId
     local p = promise.new()
-    QBCore.Functions.TriggerCallback('mdt:server:GetPlayerSourceId', function(result)
+    DynCore.Functions.TriggerCallback('mdt:server:GetPlayerSourceId', function(result)
         p:resolve(result)
     end, citizenId)
 
@@ -419,7 +419,7 @@ RegisterNUICallback("sendToCommunityService", function(data, cb)
 
     -- Gets the player id from the citizenId
     local p = promise.new()
-    QBCore.Functions.TriggerCallback('mdt:server:GetPlayerSourceId', function(result)
+    DynCore.Functions.TriggerCallback('mdt:server:GetPlayerSourceId', function(result)
         p:resolve(result)
     end, citizenId)
 
@@ -437,7 +437,7 @@ RegisterNetEvent('mdt:client:getProfileData', function(sentData, isLimited)
             sentData['vehicles'][i]['plate'] = string.upper(sentData['vehicles'][i]['plate'])
             local tempModel = vehicles[i]['model']
             if tempModel and tempModel ~= "Unknown" then
-                local vehData = QBCore.Shared.Vehicles[tempModel]
+                local vehData = DynCore.Shared.Vehicles[tempModel]
                 sentData['vehicles'][i]['model'] = vehData["brand"] .. ' ' .. vehData["name"]
             end
         end
@@ -464,7 +464,7 @@ RegisterNUICallback('SetHouseLocation', function(data, cb)
         coords[#coords+1] = tonumber(word)
     end
     SetNewWaypoint(coords[1], coords[2])
-    QBCore.Functions.Notify('GPS has been set!', 'success')
+    DynCore.Functions.Notify('GPS has been set!', 'success')
 end)
 
 --====================================================================================
@@ -637,7 +637,7 @@ RegisterNUICallback("searchVehicles", function(data, cb)
 
     local p = promise.new()
 
-    QBCore.Functions.TriggerCallback('mdt:server:SearchVehicles', function(result)
+    DynCore.Functions.TriggerCallback('mdt:server:SearchVehicles', function(result)
         p:resolve(result)
     end, data.name)
 
@@ -651,7 +651,7 @@ RegisterNUICallback("searchVehicles", function(data, cb)
 
         -- If a server forgets to define a vehicle in their vehicles table, we log a console error
         -- and set it to unknown. This is to prevent the MDT from getting stuck.
-        local vehData = QBCore.Shared.Vehicles[vehicle['vehicle']]
+        local vehData = DynCore.Shared.Vehicles[vehicle['vehicle']]
         if vehData == nil then
             print("Vehicle not found for profile:", vehicle['vehicle']) -- Do not remove print, is a guide for a nil error. 
             print("Make sure the profile you're trying to load has all cars added to the core under vehicles.lua.") -- Do not remove print, is a guide for a nil error. 
@@ -700,7 +700,7 @@ RegisterNUICallback("saveVehicleInfo", function(data, cb)
             end
 
             if found == 0 then
-                QBCore.Functions.Notify('Vehicle not found!', 'error')
+                DynCore.Functions.Notify('Vehicle not found!', 'error')
                 SendNUIMessage({ type = "redImpound" })
             end
         else
@@ -728,7 +728,7 @@ end)
 RegisterNUICallback("searchWeapons", function(data, cb)
     local p = promise.new()
 
-    QBCore.Functions.TriggerCallback('mdt:server:SearchWeapons', function(result)
+    DynCore.Functions.TriggerCallback('mdt:server:SearchWeapons', function(result)
         p:resolve(result)
     end, data.name)
 
@@ -774,7 +774,7 @@ RegisterNUICallback("getPenalCode", function(data, cb)
 end)
 
 RegisterNUICallback("toggleDuty", function(data, cb)
-    TriggerServerEvent('QBCore:ToggleDuty')
+    TriggerServerEvent('DynCore:ToggleDuty')
     TriggerServerEvent('karma-mdt:server:ClockSystem')
     cb(true)
 end)
@@ -805,7 +805,7 @@ RegisterNetEvent('mdt:client:getVehicleData', function(sentData)
         local vehData = json.decode(vehicle['vehicle'])
         vehicle['color'] = Config.ColorInformation[vehicle['color1']]
         vehicle['colorName'] = Config.ColorNames[vehicle['color1']]
-        local vehData = QBCore.Shared.Vehicles[vehicle.vehicle]
+        local vehData = DynCore.Shared.Vehicles[vehicle.vehicle]
         vehicle.model = vehData["brand"] .. ' ' .. vehData["name"]
         vehicle['class'] = Config.ClassList[GetVehicleClassFromName(vehicle['vehicle'])]
         vehicle['vehicle'] = nil
@@ -833,9 +833,9 @@ RegisterNetEvent('mdt:client:setRadio', function(radio)
     if type(tonumber(radio)) == "number" then
         exports["pma-voice"]:setVoiceProperty("radioEnabled", true)
         exports["pma-voice"]:setRadioChannel(tonumber(radio))
-        QBCore.Functions.Notify("You have set your radio frequency to "..radio..".", "success")
+        DynCore.Functions.Notify("You have set your radio frequency to "..radio..".", "success")
     else
-        QBCore.Functions.Notify("Invalid Station(Please enter a number)", "error")
+        DynCore.Functions.Notify("Invalid Station(Please enter a number)", "error")
     end
 end)
 
@@ -1001,7 +1001,7 @@ RegisterNetEvent('mdt:client:statusImpound', function(data, plate)
 end)
 
 function GetPlayerWeaponInfos(cb)
-    QBCore.Functions.TriggerCallback('getWeaponInfo', function(weaponInfos)
+    DynCore.Functions.TriggerCallback('getWeaponInfo', function(weaponInfos)
         cb(weaponInfos)
     end)
 end
@@ -1013,7 +1013,7 @@ AddEventHandler('karma-mdt:client:selfregister', function()
         if weaponInfos and #weaponInfos > 0 then
             for _, weaponInfo in ipairs(weaponInfos) do
                 TriggerServerEvent('mdt:server:registerweapon', weaponInfo.serialnumber, weaponInfo.weaponurl, weaponInfo.notes, weaponInfo.owner, weaponInfo.weapClass, weaponInfo.weaponmodel)
-                TriggerEvent('QBCore:Notify', "Weapon " .. weaponInfo.weaponmodel .. " has been added to police database.")
+                TriggerEvent('DynCore:Notify', "Weapon " .. weaponInfo.weaponmodel .. " has been added to police database.")
                 --print("Weapon added to database")
             end
         else
@@ -1029,7 +1029,7 @@ end)
         if weaponInfos and #weaponInfos > 0 then
             for _, weaponInfo in ipairs(weaponInfos) do
                 TriggerServerEvent('mdt:server:registerweapon', weaponInfo.serialnumber, weaponInfo.weaponurl, weaponInfo.notes, weaponInfo.owner, weaponInfo.weapClass, weaponInfo.weaponmodel)
-                TriggerEvent('QBCore:Notify', "Weapon " .. weaponInfo.weaponmodel .. " has been added to police database.")
+                TriggerEvent('DynCore:Notify', "Weapon " .. weaponInfo.weaponmodel .. " has been added to police database.")
                 --print("Weapon added to database")
             end
         else
@@ -1076,11 +1076,11 @@ end
 if Config.UseWolfknightRadar == true then
     RegisterNetEvent("karma-mdt:client:trafficStop")
     AddEventHandler("karma-mdt:client:trafficStop", function()
-        local plyData = QBCore.Functions.GetPlayerData()
+        local plyData = DynCore.Functions.GetPlayerData()
         local currentPos = GetEntityCoords(PlayerPedId())
         local locationInfo = getStreetandZone(currentPos)
         if not IsPedInAnyPoliceVehicle(PlayerPedId()) then
-            QBCore.Functions.Notify("Not in any Police Vehicle!", "error") 
+            DynCore.Functions.Notify("Not in any Police Vehicle!", "error") 
             return 
         end
         local data, vData, vehicle = exports["wk_wars2x"]:GetFrontPlate(), {}
@@ -1114,7 +1114,7 @@ if Config.UseWolfknightRadar == true then
                 coolDown = false
             end)
         else
-            QBCore.Functions.Notify("Traffic Stop Cooldown active!", "error") 
+            DynCore.Functions.Notify("Traffic Stop Cooldown active!", "error") 
         end
     end)
 end

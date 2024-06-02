@@ -13,10 +13,10 @@
 
 ## Dependencies
 
-- [QBCore](https://github.com/qbcore-framework/dyn-core)
+- [DynCore](https://github.com/DynCore-framework/dyn-core)
 - [PS-MDT](https://github.com/Project-Sloth/ps-mdt)
 - [oxmysql](https://github.com/overextended/oxmysql)
-- [dyn-apartments](https://github.com/qbcore-framework/dyn-apartments) - If you want to disable just go into our shared/config.lua
+- [dyn-apartments](https://github.com/DynCore-framework/dyn-apartments) - If you want to disable just go into our shared/config.lua
 - [dyn-communityservice](https://github.com/Zepherlah/dyn-community-service) - If you're planning on sending to community service. 
 
 # Installation
@@ -32,7 +32,7 @@
 
 - **My dispatch calls are not being populated?** - You have not started the dispatch resource before the mdt or renamed the dispatch resource name and not made the necessary changes in mdt to reflect that.
 
-- **Getting a error about utf8mb4_unicode illegal collation?** - QBCore has decided to change their collations on the new txAdmin recipe, change your collation on your players table to utf8mb4_general_ci. Run this query below on your database to automatically change it. 
+- **Getting a error about utf8mb4_unicode illegal collation?** - DynCore has decided to change their collations on the new txAdmin recipe, change your collation on your players table to utf8mb4_general_ci. Run this query below on your database to automatically change it. 
 ```sql
 ALTER TABLE players CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
 ```

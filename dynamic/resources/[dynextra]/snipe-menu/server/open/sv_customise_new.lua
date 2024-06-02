@@ -34,8 +34,8 @@ end)
 CreateCallback("snipe-menu:server:getPlayerInfo", function(source, cb, otherPlayerId)
     local src = source
     local returnData = {}
-    if Config.Core == "QBCore" then
-        local otherPlayer = QBCore.Functions.GetPlayer(otherPlayerId)
+    if Config.Core == "DynCore" then
+        local otherPlayer = DynCore.Functions.GetPlayer(otherPlayerId)
         returnData.citizenId = otherPlayer.PlayerData.citizenid
         returnData.name = otherPlayer.PlayerData.charinfo.firstname.." "..otherPlayer.PlayerData.charinfo.lastname
         returnData.job = otherPlayer.PlayerData.job.label.." ("..otherPlayer.PlayerData.job.grade.name..")"

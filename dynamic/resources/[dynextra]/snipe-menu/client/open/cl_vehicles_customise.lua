@@ -1,5 +1,5 @@
 function BennyOpen()
-    if Config.Core == "QBCore" then
+    if Config.Core == "DynCore" then
         TriggerServerEvent("snipe-menu:server:toggleBennys")
     elseif Config.Core == "ESX" then
         exports["esx_lscustom"]:GetAction({value = 'main'})
@@ -21,7 +21,7 @@ function GiveKeys(vehicle, plate)
 end
 
 function getVehicleFromVehList(hash)
-	for _, v in pairs(QBCore.Shared.Vehicles) do
+	for _, v in pairs(DynCore.Shared.Vehicles) do
         local vehHash
         if type(v.hash) == "string" then
             if Config.Debug then

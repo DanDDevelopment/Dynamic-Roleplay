@@ -2,7 +2,7 @@ RegisterServerEvent('snipe-menu:server:giveClothes', function(otherPlayerId)
     local src = source
     if src ~= 0 and onlineAdmins[src] then
         SendLogs(src, "triggered", Config.Locales["give_clothes_used"]..GetPlayerName(otherPlayerId))
-        if Config.Core == "QBCore" then
+        if Config.Core == "DynCore" then
             TriggerClientEvent('dyn-clothing:client:openMenu', otherPlayerId)
         elseif Config.Core == "ESX" then
             TriggerClientEvent("esx_skin:openSaveableMenu", otherPlayerId)
@@ -34,12 +34,12 @@ RegisterServerEvent("snipe-menu:server:giveOutfits", function(id)
         if Config.Skin == "dyn-clothing" then
             TriggerClientEvent("dyn-clothing:client:openOutfitMenu", id)
         elseif Config.Skin == "fivem-appearance" then
-            if Config.Core == "QBCore" then
+            if Config.Core == "DynCore" then
                 TriggerClientEvent("dyn-clothing:client:openOutfitMenu", id)
             else
                 TriggerClientEvent("fivem-appearance:pickNewOutfit", id, {id = 1, number = 2})
             end
-        elseif Config.Core == "QBCore" and Config.Skin == "illenium-appearance" then
+        elseif Config.Core == "DynCore" and Config.Skin == "illenium-appearance" then
             TriggerClientEvent("dyn-clothing:client:openOutfitMenu", id)
         elseif Config.Skin == "illenium-appearance" then
             TriggerClientEvent("illenium-appearance:openOutfitMenu", id)

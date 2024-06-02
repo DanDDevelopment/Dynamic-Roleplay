@@ -1,13 +1,13 @@
 RegisterNetEvent("snipe-menu:client:toggleDuty", function()
     if hasAdminPerms then     
-        if Config.Core == "QBCore" then   
-            local PlayerData = QBCore.Functions.GetPlayerData()
+        if Config.Core == "DynCore" then   
+            local PlayerData = DynCore.Functions.GetPlayerData()
             if PlayerData.job.name == "police" then
                 TriggerEvent("apex_lawenforcement:ToggleDuty") -- this event is present in apex_lawenforcement/client/job.lua (added this event because it manages some local variables in apex_lawenforcement)
             elseif PlayerData.job.name == "ambulance" then
                 TriggerEvent("EMSToggle:Duty") -- this event is present in dyn-ambulancejob/client/job.lua (added this event because it manages some local variables in dyn-ambulancejob)
             else
-                TriggerServerEvent("QBCore:ToggleDuty") -- this event is present in dyn-core/server/main.lua
+                TriggerServerEvent("DynCore:ToggleDuty") -- this event is present in dyn-core/server/main.lua
             end
             TriggerServerEvent("snipe-menu:server:sendLogs", "triggered", Config.Locales["toggle_duty_used"])
         elseif Config.Core == "ESX" then
@@ -87,7 +87,7 @@ RegisterNetEvent("snipe-menu:client:reviveall", function(id)
     end, id)
     local isAdmin = Citizen.Await(p)
     if isAdmin then
-        if Config.Core == "QBCore" then
+        if Config.Core == "DynCore" then
             TriggerEvent("hospital:client:Revive")
         elseif Config.Core == "ESX" then
             TriggerEvent("esx_ambulancejob:revive")

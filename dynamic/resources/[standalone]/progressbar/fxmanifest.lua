@@ -2,7 +2,7 @@ fx_version 'cerulean'
 lua54 'yes'
 game 'gta5'
 
-author 'qbcore-framework'
+author 'DynCore-framework'
 description 'Dependency for creating progressbars in dyn-Core.'
 version '1.0.0'
 

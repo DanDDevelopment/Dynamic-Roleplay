@@ -42,14 +42,14 @@ Config.WeatherScript = "none" -- "none", "cd_easytime"
 Config.Fuel = "legacy" -- "ps" "ox" "other", "cdn", "legacy"
 
 -- garage
--- none is for default ESX or QBCore garage
+-- none is for default ESX or DynCore garage
 -- cd is for cd_garage
 -- if you use any other paid garage system, the code is open in server/open/sv_vehicles.lua for you to edit queries.
 -- Make sure to try with none before making changes in the config or the sv_vehicles.lua file
 Config.Garage = "none" -- cd , none
 
 Config.GarageTables = {
-    ["QBCore"] = {
+    ["DynCore"] = {
         vehicle_table = "player_vehicles",
         trunk_table = "trunkitems", -- used for qb inventory (if your inventory stores the glove box items and trunk items in different table, change it here)
         glovebox_table = "gloveboxitems", -- used for qb inventory (if your inventory stores the glove box items and trunk items in different table, change it here)

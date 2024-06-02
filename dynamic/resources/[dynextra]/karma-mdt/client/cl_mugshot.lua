@@ -1,10 +1,10 @@
-QBCore = exports['dyn-core']:GetCoreObject()
+DynCore = exports['dyn-core']:GetCoreObject()
 local PlayerData = {}
 local mugshotInProgress, createdCamera, MugshotArray, playerData = false, 0, {}, nil
 local handle, board, board_scaleform, overlay, ped, pedcoords, x, y, z, r, suspectheading, suspectx, suspecty, suspectz, board_pos
 local MugShots = {}
 
--- Mugshot location  ( Position is the default QBCore Prison Interior )
+-- Mugshot location  ( Position is the default DynCore Prison Interior )
 	x = 1828.69
     y = 2581.72
     z = 46.3
@@ -17,7 +17,7 @@ local MugShots = {}
 -- Mugshot functions
 
 local function TakeMugShot()
-    QBCore.Functions.TriggerCallback('karma-mdt:server:MugShotWebhook', function(MugShotWebhook)
+    DynCore.Functions.TriggerCallback('karma-mdt:server:MugShotWebhook', function(MugShotWebhook)
         exports['screenshot-basic']:requestScreenshotUpload(MugShotWebhook, 'files[]', {encoding = 'jpg'}, function(data)
             local resp = json.decode(data)
             table.insert(MugshotArray, resp.attachments[1].url)
@@ -165,11 +165,11 @@ RegisterNetEvent('cqc-mugshot:client:trigger', function()
     ped = PlayerPedId()
     pedcoords = GetEntityCoords(ped)
     CreateThread(function()
-        playerData = QBCore.Functions.GetPlayerData()
+        playerData = DynCore.Functions.GetPlayerData()
         MugshotArray, mugshotInProgress = {}, true
         local citizenid = playerData.citizenid
         local animDict = 'mp_character_creation@lineup@male_a'
-        QBCore.Functions.RequestAnimDict(animDict)
+        DynCore.Functions.RequestAnimDict(animDict)
         PrepBoard()
         Wait(250)
         MakeBoard()
@@ -190,13 +190,13 @@ RegisterNetEvent('cqc-mugshot:client:trigger', function()
 end)
 
 RegisterNUICallback("sendToJail", function(data, cb)
-    QBCore.Functions.TriggerCallback('karma-mdt:server:MugShotWebhook', function(MugShotWebhook)
+    DynCore.Functions.TriggerCallback('karma-mdt:server:MugShotWebhook', function(MugShotWebhook)
         if MugShotWebhook ~= '' then
             local citizenId, sentence = data.citizenId, data.sentence
 
             -- Gets the player id from the citizenId
             local p = promise.new()
-            QBCore.Functions.TriggerCallback('mdt:server:GetPlayerSourceId', function(result)
+            DynCore.Functions.TriggerCallback('mdt:server:GetPlayerSourceId', function(result)
                 p:resolve(result)
             end, citizenId)
         

@@ -1,7 +1,7 @@
 CreateCallback("snipe-menu:server:getOfflinePlayers", function(source, cb)
     local addedLicenses = {}
     local returnData = {}
-    if Config.Core == "QBCore" then
+    if Config.Core == "DynCore" then
         local player = MySQL.query.await('SELECT DISTINCT license, name FROM players')
         if player ~= nil then
             for k, v in pairs(player) do
@@ -34,7 +34,7 @@ CreateCallback("snipe-menu:server:getOfflinePlayers", function(source, cb)
 end)
 
 CreateCallback("snipe-menu:server:getAllOwnedVehicles", function(source, cb)
-    if Config.Core == "QBCore" and Config.Inventory ~= "ox" then
+    if Config.Core == "DynCore" and Config.Inventory ~= "ox" then
         local result = MySQL.query.await('SELECT plate, vehicle FROM player_vehicles')
         local returnData = {}
         if result ~= nil then
@@ -91,7 +91,7 @@ CreateCallback("snipe-menu:server:getAllOwnedVehicles", function(source, cb)
         
     elseif Config.Inventory == "ox" then
         local query = 'SELECT plate FROM owned_vehicles where trunk != "NULL" OR glovebox != "NULL"'
-        if Config.Core == "QBCore" then
+        if Config.Core == "DynCore" then
             query = 'SELECT plate FROM player_vehicles where trunk != "NULL" OR glovebox != "NULL"'
         end
         local result = MySQL.query.await(query)
@@ -124,7 +124,7 @@ CreateCallback("snipe-menu:server:getAllOwnedVehicles", function(source, cb)
         end
     else
         print("Snipe-Menu: Invalid Inventory Type, please change it to either 'qb' or 'qs' or 'ox' in config.lua")
-        print("Snipe-Menu: Invalid Core, please change it to either 'QBCore' or 'ESX' in config.lua")
+        print("Snipe-Menu: Invalid Core, please change it to either 'DynCore' or 'ESX' in config.lua")
         cb(nil)
     end
 end)

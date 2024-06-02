@@ -38,7 +38,7 @@ if not Config.UseOldSlingScript then
 
 
     ---------- [Commands] ----------
-    if Framework == "QBCore" then
+    if Framework == "DynCore" then
         FWork.Commands.Add(Config.WeaponSettingCommand, "Adjust server weapons positions", {}, false, function(source, args)
             local src = source
             TriggerClientEvent("Pug:client:OpenSlingEditor",src)

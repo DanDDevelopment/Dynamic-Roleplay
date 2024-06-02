@@ -34,8 +34,8 @@ end)
 
 if not Config.UseOldSlingScript then
 
-    RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
-    AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+    RegisterNetEvent('DynCore:Client:OnPlayerLoaded')
+    AddEventHandler('DynCore:Client:OnPlayerLoaded', function()
         Wait(3000)
         TriggerEvent("Pug:client:RegisterAllBackWeapons")
     end)
@@ -49,7 +49,7 @@ if not Config.UseOldSlingScript then
     function SlingNotify(msg, type, length)
         if Framework == "ESX" then
             FWork.ShowNotification(msg)
-        elseif Framework == "QBCore" then
+        elseif Framework == "DynCore" then
             FWork.Functions.Notify(msg, type, length)
         end
     end

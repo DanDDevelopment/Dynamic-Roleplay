@@ -4,11 +4,11 @@ if not Config.UseOldSlingScript then
     ---------- [Framework] ----------
     -- (DONT TOUCH THIS UNLESS YOU HAVE A CUSTOM FRAMEWORK)
     if GetResourceState('es_extended') == 'started' then
-        Framework = "ESX" -- (ESX) or (QBCore)
+        Framework = "ESX" -- (ESX) or (DynCore)
     elseif GetResourceState('dyn-core') == 'started' then
-        Framework = "QBCore" -- (ESX) or (QBCore)
+        Framework = "DynCore" -- (ESX) or (DynCore)
     end
-    if Framework == "QBCore" then
+    if Framework == "DynCore" then
         Config.CoreName = "dyn-core" -- your core name
         FWork = exports[Config.CoreName]:GetCoreObject()
     elseif Framework == "ESX" then
@@ -247,7 +247,7 @@ if not Config.UseOldSlingScript then
     Config.FrameworkFunctions = {
         -- Client-side trigger callback
         TriggerCallback = function(...)
-            if Framework == 'QBCore' then
+            if Framework == 'DynCore' then
                 FWork.Functions.TriggerCallback(...)
             else
                 FWork.TriggerServerCallback(...)
@@ -256,7 +256,7 @@ if not Config.UseOldSlingScript then
 
         -- Server-side register callback
         CreateCallback = function(...)
-            if Framework == 'QBCore' then
+            if Framework == 'DynCore' then
                 FWork.Functions.CreateCallback(...)
             else
                 FWork.RegisterServerCallback(...)
@@ -265,7 +265,7 @@ if not Config.UseOldSlingScript then
 
         GetPlayer = function()
             local self = {}
-            if Framework == 'QBCore' then
+            if Framework == 'DynCore' then
                 player = FWork.Functions.GetPlayerData()
                 self.PlayerData = { job = { name = player.job.name} }
                 return self

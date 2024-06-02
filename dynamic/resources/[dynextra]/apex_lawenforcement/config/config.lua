@@ -154,7 +154,7 @@ Config.Features = {
         Time = 15,
         Circles = 1,
         ------------------------------------
-        SkillbarMinigame = false, -- This requires: 'dyn-skillbar': https://github.com/qbcore-framework/dyn-skillbar
+        SkillbarMinigame = false, -- This requires: 'dyn-skillbar': https://github.com/DynCore-framework/dyn-skillbar
         Duration = math.random(7500, 15000), -- how long the skillbar runs for
         Pos = math.random(10, 30), -- how far to the right the static box is
         Width = math.random(10, 20), -- how wide the static box is

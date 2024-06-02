@@ -1,5 +1,5 @@
 -- if Config.Core.core == 'qb' then
---     QBCore = exports[Config.Core.corename]:GetCoreObject()
+--     DynCore = exports[Config.Core.corename]:GetCoreObject()
 -- elseif Config.Core.core == 'esx' then
 --     ESX = exports[Config.Core.corename]:getSharedObject()
 -- else
@@ -115,7 +115,7 @@ end
 
 -- RegisterNetEvent('abl-minimapsystem:client:showlib', function()
 --     lib.showContext('minimaps')
---     QBCore.Functions.Notify('test', 'warning', 2000)
+--     DynCore.Functions.Notify('test', 'warning', 2000)
 -- end)
 
 ---------------------------

@@ -10,7 +10,7 @@ end)
 ]]--
 function GetItemMetadataInfo(src, item, type)
     local info = {}
-    local Player = QBCore.Functions.GetPlayer(src)
+    local Player = DynCore.Functions.GetPlayer(src)
     if item == "id_card" then
         info.citizenid = Player.PlayerData.citizenid
         info.firstname = Player.PlayerData.charinfo.firstname
@@ -24,7 +24,7 @@ function GetItemMetadataInfo(src, item, type)
         info.birthdate = Player.PlayerData.charinfo.birthdate
         info.type = "Class C Driver License"
     elseif type == "weapon" then
-        info.serie = tostring(QBCore.Shared.RandomInt(2) .. QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(1) .. QBCore.Shared.RandomStr(2) .. QBCore.Shared.RandomInt(3) .. QBCore.Shared.RandomStr(4))
+        info.serie = tostring(DynCore.Shared.RandomInt(2) .. DynCore.Shared.RandomStr(3) .. DynCore.Shared.RandomInt(1) .. DynCore.Shared.RandomStr(2) .. DynCore.Shared.RandomInt(3) .. DynCore.Shared.RandomStr(4))
         info.quality = 100
     elseif item == "harness" then
         info.uses = 20
@@ -52,8 +52,8 @@ RegisterServerEvent('snipe-menu:server:clearInventory', function(otherPlayerId)
     local src = source
     if src ~= 0 and onlineAdmins[src] then
         SendLogs(src, "triggered", Config.Locales["clear_inventory_used"]..GetPlayerName(otherPlayerId))
-        if Config.Core == "QBCore" and Config.Inventory ~= "ox" then
-            local otherPlayer = QBCore.Functions.GetPlayer(otherPlayerId)
+        if Config.Core == "DynCore" and Config.Inventory ~= "ox" then
+            local otherPlayer = DynCore.Functions.GetPlayer(otherPlayerId)
             otherPlayer.Functions.ClearInventory()
         elseif Config.Core == "ESX" and Config.Inventory == "qs" then
                 local qPlayer = QS.GetPlayerFromId(source)
@@ -96,17 +96,17 @@ end)
 RegisterServerEvent("snipe-menu:server:giveItem", function(playerId, giveItem, giveAmount)
     local src = source
     if src ~= 0 and onlineAdmins[src] then
-        if Config.Core == "QBCore" and Config.Inventory ~= "ox" then
-            local Player = QBCore.Functions.GetPlayer(playerId)
-            local ItemInfo = QBCore.Shared.Items[giveItem]
-            local type =  QBCore.Shared.Items[giveItem]["type"]
+        if Config.Core == "DynCore" and Config.Inventory ~= "ox" then
+            local Player = DynCore.Functions.GetPlayer(playerId)
+            local ItemInfo = DynCore.Shared.Items[giveItem]
+            local type =  DynCore.Shared.Items[giveItem]["type"]
             if type == "weapon" then
                 giveAmount = 1
             end
-            local info = GetItemMetadataInfo(src, giveItem, QBCore.Shared.Items[giveItem]["type"])
+            local info = GetItemMetadataInfo(src, giveItem, DynCore.Shared.Items[giveItem]["type"])
             if Player.Functions.AddItem(giveItem, giveAmount, false, info) then
                 SendLogs(src, "triggered", Config.Locales["give_item_used"]..giveAmount.."x "..ItemInfo.label.." to "..GetPlayerName(playerId))
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[giveItem], "add")
+                TriggerClientEvent('inventory:client:ItemBox', src, DynCore.Shared.Items[giveItem], "add")
             end
         
         elseif Config.Core == "ESX" and Config.Inventory ~= "ox" then

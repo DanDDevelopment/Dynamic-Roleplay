@@ -1,4 +1,4 @@
-local QBCore = exports['dyn-core']:GetCoreObject()
+local DynCore = exports['dyn-core']:GetCoreObject()
 
 -- Get CitizenIDs from Player License
 function GetCitizenID(license)
@@ -66,7 +66,7 @@ function GetPlayerProperties(cid, cb)
 end
 
 function GetPlayerDataById(id)
-    local Player = QBCore.Functions.GetPlayerByCitizenId(id)
+    local Player = DynCore.Functions.GetPlayerByCitizenId(id)
     if Player ~= nil then
 		local response = {citizenid = Player.PlayerData.citizenid, charinfo = Player.PlayerData.charinfo, metadata = Player.PlayerData.metadata, job = Player.PlayerData.job}
         return response
@@ -97,7 +97,7 @@ end
 
 function GetPlayerLicenses(identifier)
     local response = false
-    local Player = QBCore.Functions.GetPlayerByCitizenId(identifier)
+    local Player = DynCore.Functions.GetPlayerByCitizenId(identifier)
     if Player ~= nil then
         return Player.PlayerData.metadata.licences
     else
@@ -119,7 +119,7 @@ function GetPlayerLicenses(identifier)
 end
 
 function ManageLicense(identifier, type, status)
-    local Player = QBCore.Functions.GetPlayerByCitizenId(identifier)
+    local Player = DynCore.Functions.GetPlayerByCitizenId(identifier)
     local licenseStatus = nil
     if status == "give" then licenseStatus = true elseif status == "revoke" then licenseStatus = false end
     if Player ~= nil then
@@ -140,7 +140,7 @@ function ManageLicense(identifier, type, status)
 end
 
 function UpdateAllLicenses(identifier, incomingLicenses)
-    local Player = QBCore.Functions.GetPlayerByCitizenId(identifier)
+    local Player = DynCore.Functions.GetPlayerByCitizenId(identifier)
     if Player ~= nil then
         Player.Functions.SetMetaData("licences", incomingLicenses)
 

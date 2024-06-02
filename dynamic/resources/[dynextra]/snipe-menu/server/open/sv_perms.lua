@@ -55,8 +55,8 @@ function HasPerms(source)
                 end
             end
         end
-        if Config.Core == "QBCore" then
-            local xPlayer = QBCore.Functions.GetPlayer(source)
+        if Config.Core == "DynCore" then
+            local xPlayer = DynCore.Functions.GetPlayer(source)
             if xPlayer ~= nil then
                 if xPlayer.PlayerData.citizenid == k then
                     return {true, v}

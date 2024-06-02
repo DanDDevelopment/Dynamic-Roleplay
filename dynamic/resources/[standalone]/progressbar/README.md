@@ -8,11 +8,11 @@ Dependency for creating progressbars in dyn-Core.
 
 ### Client
 
-- QBCore.Functions.Progressbar(**name**: string, **label**: string, **duration**: number, **useWhileDead**: boolean, **canCancel**: boolean, **disableControls**: table, **animation**: table, **prop**: table, **propTwo**: table, **onFinish**: function, **onCancel**: function)
+- DynCore.Functions.Progressbar(**name**: string, **label**: string, **duration**: number, **useWhileDead**: boolean, **canCancel**: boolean, **disableControls**: table, **animation**: table, **prop**: table, **propTwo**: table, **onFinish**: function, **onCancel**: function)
   > Create a new progressbar from the built in dyn-core functions.<br>
   > **Example:**
   > ```lua
-  >QBCore.Functions.Progressbar("random_task", "Doing something", 5000, false, true, {
+  >DynCore.Functions.Progressbar("random_task", "Doing something", 5000, false, true, {
   >    disableMovement = false,
   >    disableCarMovement = false,
   >    disableMouse = false,

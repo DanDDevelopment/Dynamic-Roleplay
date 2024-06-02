@@ -14,19 +14,19 @@ end
 
 function GetPlayerGender()
     local gender = locale('male')
-    if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then
+    if DynCore.Functions.GetPlayerData().charinfo.gender == 1 then
         gender = locale('female')
     end
     return gender
 end
 
 function GetIsHandcuffed()
-    return QBCore.Functions.GetPlayerData()?.metadata?.ishandcuffed
+    return DynCore.Functions.GetPlayerData()?.metadata?.ishandcuffed
 end
 
 function IsOnDuty()
     if Config.OnDutyOnly then
-        if QBCore.Functions.GetPlayerData().job.onduty then
+        if DynCore.Functions.GetPlayerData().job.onduty then
             return true
         else
             return false
@@ -38,7 +38,7 @@ end
 ---@return boolean
 local function HasPhone()
     for _, item in ipairs(Config.PhoneItems) do
-        if QBCore.Functions.HasItem(item) then
+        if DynCore.Functions.HasItem(item) then
             return true
         end
     end
@@ -146,7 +146,7 @@ function IsCallAllowed(message)
 
     if msgLength == 0 then return false end
     if GetIsHandcuffed() then return false end
-    if Config.PhoneRequired and not HasPhone() then QBCore.Functions.Notify('You need a communications device for this.', 'error', 5000) return false end
+    if Config.PhoneRequired and not HasPhone() then DynCore.Functions.Notify('You need a communications device for this.', 'error', 5000) return false end
 
     return true
 end

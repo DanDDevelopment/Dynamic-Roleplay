@@ -19,15 +19,15 @@ ApexConfig.Debug = true
 
 -- FRAMEWORKS + RESOURCE NAMES
 -------------------------------------
---[[- FRAMEWORK: (qbcore, esx)
-    - qbcore
+--[[- FRAMEWORK: (DynCore, esx)
+    - DynCore
     - esx
 ]]--
 --[[- RESOURCE NAME: (dyn-core, es_extended)
     - dyn-core
     - es_extended
 ]]--
-ApexConfig.Framework = 'qbcore'
+ApexConfig.Framework = 'DynCore'
 ApexConfig.ResourceName = 'dyn-core'
 -------------------------------------
 
@@ -94,18 +94,18 @@ ApexConfig.Inventory = 'dyn-inventory'
 -- PROGRESSBAR SYSTEMS
 -------------------------------------
 --[[
-    - qbcore
+    - DynCore
     - ox_lib
     - progressBars
 ]]--
-ApexConfig.Progressbar = 'qbcore'
+ApexConfig.Progressbar = 'DynCore'
 -------------------------------------
 
 -- NOTIFICATION SYSTEMS
 -------------------------------------
 --[[
     - apex_lib
-    - qbcore
+    - DynCore
     - esx
     - okok
     - codem
@@ -113,7 +113,7 @@ ApexConfig.Progressbar = 'qbcore'
     - ps (project sloth)
     - ox_lib
 ]]--
-ApexConfig.Notification = 'qbcore'
+ApexConfig.Notification = 'DynCore'
 -------------------------------------
 
 -- PAYMENT SYSTEMS
@@ -152,7 +152,7 @@ ApexConfig.MDT = 'ps-mdt'
 -- DISPATCH SYSTEMS
 -------------------------------------
 --[[
-    - qbcore
+    - DynCore
     - ps-dispatch
     - qs-dispatch
     - cd_dispatch
@@ -241,11 +241,11 @@ ApexConfig.Keylock = 'dyn-vehiclekeys'
 -------------------------------------
 --[[
     - apex_lib
-    - qbcore
+    - DynCore
     - ox_lib
     - ps (project sloth)
 ]]--
-ApexConfig.TextUI = 'qbcore'
+ApexConfig.TextUI = 'DynCore'
 -------------------------------------
 
 
@@ -260,7 +260,7 @@ ApexConfig.Chat = true
 --[[
     - To use our overlay chat (me, med, ool as 3d text), set the settings below to true
     - Don't wanna use them, set them to false
-    - Remember to disable the /me command in qbcore if using this!
+    - Remember to disable the /me command in DynCore if using this!
 ]]--
 ApexConfig.OverlayChat = {              -- Also know as 3D Chat
     me = true,                          -- Default me chat

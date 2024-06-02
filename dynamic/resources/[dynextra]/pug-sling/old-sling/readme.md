@@ -1,5 +1,5 @@
 # pug-sling
-Advanced weapons slings for the qbcore framework. Any weapon in the players inventory will show up on there back.
+Advanced weapons slings for the DynCore framework. Any weapon in the players inventory will show up on there back.
 
 # -- if you are using ox_inventory make sure to change Config.Inventory no other inventory name matters.
 
@@ -28,7 +28,7 @@ https://pug-webstore.tebex.io/
 # --
 
 # -- Config file
-To add a new weapon you must change the first option to the qbcore shared.lua.
+To add a new weapon you must change the first option to the DynCore shared.lua.
 # --
 
 # -- Commands

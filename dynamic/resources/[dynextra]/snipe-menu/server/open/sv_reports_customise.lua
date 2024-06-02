@@ -11,8 +11,8 @@ RegisterNetEvent("snipe-menu:server:toggleReports", function()
 end)
 
 function GetPlayerGameIdentifier(playerId)
-    if Config.Core == "QBCore" then
-        local player = QBCore.Functions.GetPlayer(playerId)
+    if Config.Core == "DynCore" then
+        local player = DynCore.Functions.GetPlayer(playerId)
         if player ~= nil then
             return player.PlayerData.citizenid
         else

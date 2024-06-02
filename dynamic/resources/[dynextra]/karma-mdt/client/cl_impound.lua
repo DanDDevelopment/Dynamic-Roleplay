@@ -46,15 +46,15 @@ end
 local function TakeOutImpound(vehicle)
     local coords = Config.ImpoundLocations[currentGarage]
     if coords then
-        QBCore.Functions.SpawnVehicle(vehicle.vehicle, function(veh)
-            QBCore.Functions.TriggerCallback('dyn-garage:server:GetVehicleProperties', function(properties)
-                QBCore.Functions.SetVehicleProperties(veh, properties)
+        DynCore.Functions.SpawnVehicle(vehicle.vehicle, function(veh)
+            DynCore.Functions.TriggerCallback('dyn-garage:server:GetVehicleProperties', function(properties)
+                DynCore.Functions.SetVehicleProperties(veh, properties)
                 SetVehicleNumberPlateText(veh, vehicle.plate)
                 SetEntityHeading(veh, coords.w)
                 exports[Config.Fuel]:SetFuel(veh, vehicle.fuel)
                 doCarDamage(veh, vehicle)
                 TriggerServerEvent('police:server:TakeOutImpound',vehicle.plate)
-                TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
+                TriggerEvent("vehiclekeys:client:SetOwner", DynCore.Functions.GetPlate(veh))
                 SetVehicleEngineOn(veh, true, true)
             end, vehicle.plate)
         end, coords, true)
@@ -70,6 +70,6 @@ RegisterNetEvent('karma-mdt:client:TakeOutImpound', function(data)
         local vehicle = data.vehicle
         TakeOutImpound(data)
     else
-        QBCore.Functions.Notify("You are too far away from the impound location!")
+        DynCore.Functions.Notify("You are too far away from the impound location!")
     end
 end)

@@ -5,7 +5,7 @@ RegisterServerEvent('snipe-menu:server:reviveplayer', function(otherPlayerId)
         if Config.Ambulance == "wasabi" then
             TriggerClientEvent('wasabi_ambulance:revive', otherPlayerId)
         else
-            if Config.Core == "QBCore" then
+            if Config.Core == "DynCore" then
                 TriggerClientEvent('hospital:client:Revive', otherPlayerId)
             elseif Config.Core == "ESX" then
                 TriggerClientEvent('esx_ambulancejob:revive', otherPlayerId)
@@ -21,7 +21,7 @@ RegisterServerEvent('snipe-menu:server:healPlayer', function(otherPlayerId)
     local src = source
     if src ~= 0 and onlineAdmins[src] then
         SendLogs(src, "triggered", Config.Locales["heal_player_used"]..GetPlayerName(otherPlayerId))
-        if Config.Core == "QBCore" then
+        if Config.Core == "DynCore" then
             TriggerClientEvent('hospital:client:Revive', otherPlayerId)
         elseif Config.Core == "ESX" then
             TriggerClientEvent("esx_basicneeds:healPlayer", otherPlayerId)

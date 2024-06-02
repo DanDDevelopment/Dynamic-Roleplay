@@ -4,8 +4,8 @@ RegisterServerEvent("snipe-menu:server:giveMoney", function(playerid, amount, ty
     local src = source
     if src ~= 0 and onlineAdmins[src] then
         SendLogs(src, "triggered", Config.Locales["give_money_used"]..GetPlayerName(playerid).." "..amount.." "..type)
-        if Config.Core == "QBCore" then
-            local otherPlayer = QBCore.Functions.GetPlayer(playerid)
+        if Config.Core == "DynCore" then
+            local otherPlayer = DynCore.Functions.GetPlayer(playerid)
             otherPlayer.Functions.AddMoney(type, amount)
         elseif Config.Core == "ESX" then
             local otherPlayer = ESX.GetPlayerFromId(playerid)

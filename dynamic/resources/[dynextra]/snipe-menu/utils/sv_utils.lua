@@ -1,4 +1,4 @@
--- This logic is taken from dyn-core to make it compatible with ESX and QBCore at once
+-- This logic is taken from dyn-core to make it compatible with ESX and DynCore at once
 
 ServerCallbacks = {}
 

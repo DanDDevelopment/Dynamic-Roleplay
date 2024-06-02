@@ -7,8 +7,8 @@
 RegisterServerEvent("snipe-menu:server:forceLogout", function(id)
     local src = source
     if src ~= 0 and onlineAdmins[src] then
-        if Config.Core == "QBCore" then
-            QBCore.Player.Logout(id)
+        if Config.Core == "DynCore" then
+            DynCore.Player.Logout(id)
             TriggerClientEvent('dyn-multicharacter:client:chooseChar', id)
             SendLogs(src, "triggered", Config.Locales["forced_logout_player"]..GetPlayerName(id))
         elseif Config.Core == "ESX" then
@@ -57,8 +57,8 @@ end
 
 function GetPlayerInfo(id)
     local returnData = {}
-    if Config.Core == "QBCore" then
-        local otherPlayer = QBCore.Functions.GetPlayer(id)
+    if Config.Core == "DynCore" then
+        local otherPlayer = DynCore.Functions.GetPlayer(id)
         returnData.citizenId = otherPlayer.PlayerData.citizenid
         returnData.name = otherPlayer.PlayerData.charinfo.firstname.." "..otherPlayer.PlayerData.charinfo.lastname
         returnData.job = otherPlayer.PlayerData.job.label.." ("..otherPlayer.PlayerData.job.grade.name..")"

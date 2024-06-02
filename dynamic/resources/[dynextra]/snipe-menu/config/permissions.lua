@@ -30,7 +30,7 @@ Config.Permissions = {
     ["fivem:1234"] = "god",
     ["steam:1234"] = "god",
     ["124584938326312"] = "god", -- discord roles (copy the role id and paste it here) (If you want to use the discord roles, you need to add the bot token and server id in sv_customise.lua at the top)
-    ["XY123456"] = "god", -- citizenid for qbcore
+    ["XY123456"] = "god", -- citizenid for DynCore
     ["char1:12334"] = "god", -- charid for ESX
 
     -- ["license:6d3b6254a50416697dcaa91878e2eb03d9112302"] = {"mod", "admin"}, -- the role god, admin or mod should be the key from Config.GodRoles which means the values that are added in square brackets.

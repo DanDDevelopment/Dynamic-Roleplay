@@ -1,7 +1,7 @@
 CreateCallback("snipe-menu:server:getAllUniquePlayers", function(source, cb)
     local addedLicenses = {}
     local returnData = {}
-    if Config.Core == "QBCore" then
+    if Config.Core == "DynCore" then
         -- grab firstname and lastname from players table
         local player = MySQL.query.await('SELECT citizenid, JSON_VALUE(players.charinfo, "$.firstname") as firstname, JSON_VALUE(players.charinfo, "$.lastname") as lastname FROM players')
         if player ~= nil then
@@ -32,7 +32,7 @@ CreateCallback("snipe-menu:server:getAllUniquePlayers", function(source, cb)
 end)
 
 local wipeTables = {
-    QBCore = {
+    DynCore = {
         ['players'] = "citizenid",
         ["player_vehicles"] = "citizenid",
         ['player_houses'] = "citizenid",
@@ -48,8 +48,8 @@ RegisterServerEvent("snipe-menu:server:wipePlayer", function(id)
     local src = source
     if onlineAdmins[src] then
         SendLogs(source, "triggered", Config.Locales["wiped_player"]..id)
-        if Config.Core == "QBCore" then
-            for k, v in pairs(wipeTables.QBCore) do
+        if Config.Core == "DynCore" then
+            for k, v in pairs(wipeTables.DynCore) do
                 MySQL.Async.execute('DELETE FROM '..k..' WHERE '..v..' = @id', {
                     ['@id'] = id
                 }, function(rowsChanged)

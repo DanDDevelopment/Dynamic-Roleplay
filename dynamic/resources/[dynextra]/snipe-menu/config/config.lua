@@ -2,11 +2,11 @@ Config = {}
 
 Config.CommandName = "adminmenu" -- command to open the menu
 
-Config.Core = "QBCore" -- ESX or QBCore
+Config.Core = "DynCore" -- ESX or DynCore
 Config.CoreFolderName = "dyn-core"  -- es_extended || dyn-core
 
-Config.PlayerLoadedEvent = "QBCore:Client:OnPlayerLoaded" -- esx:playerLoaded || QBCore:Client:OnPlayerLoaded
-Config.PlayerUnloadEvent = "QBCore:Client:OnPlayerUnload" -- esx:onPlayerLogout || QBCore:Client:OnPlayerUnload     
+Config.PlayerLoadedEvent = "DynCore:Client:OnPlayerLoaded" -- esx:playerLoaded || DynCore:Client:OnPlayerLoaded
+Config.PlayerUnloadEvent = "DynCore:Client:OnPlayerUnload" -- esx:onPlayerLogout || DynCore:Client:OnPlayerUnload     
 
 Config.Target = "dyn-target" -- dyn-target || ox_target || qtarget (Only these 3 targets are supported. You will have to edit in cl_customise if you want to use any other target other than this. No support is given to other target scripts)
 

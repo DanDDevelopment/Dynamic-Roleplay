@@ -1,4 +1,4 @@
-QBCore, ESX = nil, nil
+DynCore, ESX = nil, nil
 
 -- ███████ ██████   █████  ███    ███ ███████ ██     ██  ██████  ██████  ██   ██ 
 -- ██      ██   ██ ██   ██ ████  ████ ██      ██     ██ ██    ██ ██   ██ ██  ██  
@@ -6,11 +6,11 @@ QBCore, ESX = nil, nil
 -- ██      ██   ██ ██   ██ ██  ██  ██ ██      ██ ███ ██ ██    ██ ██   ██ ██  ██  
 -- ██      ██   ██ ██   ██ ██      ██ ███████  ███ ███   ██████  ██   ██ ██   ██
 
-if Config.Core == "QBCore" then
-    QBCore = exports[Config.CoreFolderName]:GetCoreObject()
+if Config.Core == "DynCore" then
+    DynCore = exports[Config.CoreFolderName]:GetCoreObject()
     Citizen.CreateThread(function()
-        while QBCore == nil do
-            TriggerEvent(Config.Core..':GetObject', function(obj) QBCore = obj end)
+        while DynCore == nil do
+            TriggerEvent(Config.Core..':GetObject', function(obj) DynCore = obj end)
             Citizen.Wait(200)
         end
     end)
@@ -57,7 +57,7 @@ RegisterNetEvent("snipe-menu:client:removeStress", function(id)
     end, id)
     local isAdmin = Citizen.Await(p)
     if isAdmin then
-        TriggerServerEvent("hud:server:RelieveStress", 100) -- this is qbcore event to remove stress (that particular event is in dyn-hud/server.lua)
+        TriggerServerEvent("hud:server:RelieveStress", 100) -- this is DynCore event to remove stress (that particular event is in dyn-hud/server.lua)
     else
         TriggerServerEvent("snipe-menu:server:sendLogs", "exploit", Config.Locales["stress_exploit_event"])
     end
@@ -79,7 +79,7 @@ end)
 
 RegisterNetEvent("snipe-menu:client:reviveInRadius", function(coords)
     if #(GetEntityCoords(PlayerPedId()) - coords) < Config.ReviveRadiusDistance then
-        if Config.Core == "QBCore" then
+        if Config.Core == "DynCore" then
             TriggerEvent("hospital:client:Revive")
         elseif Config.Core == "ESX" then
             TriggerEvent("esx_ambulancejob:revive")
@@ -171,8 +171,8 @@ end
 -- ██   ████  ██████     ██    ██ ██         ██
 
 function ShowNotification(msg, type)
-    if Config.Core == "QBCore" then
-        QBCore.Functions.Notify(msg, type)
+    if Config.Core == "DynCore" then
+        DynCore.Functions.Notify(msg, type)
     elseif Config.Core == "ESX" then
         ESX.ShowNotification(msg)
     end

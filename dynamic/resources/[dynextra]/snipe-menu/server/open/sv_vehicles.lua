@@ -60,7 +60,7 @@ RegisterServerEvent("snipe-menu:server:givecar", function(playerid, carname, pro
                 garageType = "air"
             end
             garageName = "A"
-        elseif Config.Core == "QBCore" and Config.Garage == "none" then
+        elseif Config.Core == "DynCore" and Config.Garage == "none" then
             if type == "boats" then
                 garageName = "lsymc"
             elseif type == "air" then
@@ -70,8 +70,8 @@ RegisterServerEvent("snipe-menu:server:givecar", function(playerid, carname, pro
 
         if Config.Garage == "cd" then
             print(garageType, type, garageName)
-            if Config.Core == "QBCore" then
-                local otherPlayer = QBCore.Functions.GetPlayer(playerid)
+            if Config.Core == "DynCore" then
+                local otherPlayer = DynCore.Functions.GetPlayer(playerid)
                 local cid = otherPlayer.PlayerData.citizenid
                 MySQL.insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, garage_id, garage_type, in_garage) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', {
                     otherPlayer.PlayerData.license,
@@ -96,8 +96,8 @@ RegisterServerEvent("snipe-menu:server:givecar", function(playerid, carname, pro
                 })
             end
         else
-            if Config.Core == "QBCore" then
-                local otherPlayer = QBCore.Functions.GetPlayer(playerid)
+            if Config.Core == "DynCore" then
+                local otherPlayer = DynCore.Functions.GetPlayer(playerid)
                 local cid = otherPlayer.PlayerData.citizenid
                 MySQL.insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, garage, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', {
                     otherPlayer.PlayerData.license,
@@ -141,13 +141,13 @@ RegisterServerEvent("snipe-menu:server:addAdminCar", function(carname, propertie
             return
         end
         local query = ""
-        if Config.Core == "QBCore" and Config.Garage == "cd" then
+        if Config.Core == "DynCore" and Config.Garage == "cd" then
             query = 'INSERT INTO '..Config.GarageTables[Config.Core].vehicle_table..' (license, citizenid, vehicle, hash, mods, plate, garage_id, garage_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
         elseif Config.Core == "ESX" and Config.Garage == "cd" then
             query = 'INSERT INTO '..Config.GarageTables[Config.Core].vehicle_table..' (owner, vehicle, plate, garage_type) VALUES (?, ?, ?, ?)'
         elseif Config.Core == "ESX" and Config.Garage == "none" then
             query = 'INSERT INTO '..Config.GarageTables[Config.Core].vehicle_table..' (owner, vehicle, plate) VALUES (?, ?, ?)'
-        elseif Config.Core == "QBCore" and Config.Garage == "none" then
+        elseif Config.Core == "DynCore" and Config.Garage == "none" then
             query = 'INSERT INTO '..Config.GarageTables[Config.Core].vehicle_table..' (license, citizenid, vehicle, hash, mods, plate, garage) VALUES (?, ?, ?, ?, ?, ?, ?)'
         end
 
@@ -162,15 +162,15 @@ RegisterServerEvent("snipe-menu:server:addAdminCar", function(carname, propertie
                 garageType = "air"
             end
             garageName = "A"
-        elseif Config.Core == "QBCore" and Config.Garage == "none" then
+        elseif Config.Core == "DynCore" and Config.Garage == "none" then
             if type == "boats" then
                 garageName = "lsymc"
             elseif type == "air" then
                 garageName = "intairport"
             end
         end
-        if Config.Core == "QBCore" and Config.Garage == 'cd' then
-            local otherPlayer = QBCore.Functions.GetPlayer(src)
+        if Config.Core == "DynCore" and Config.Garage == 'cd' then
+            local otherPlayer = DynCore.Functions.GetPlayer(src)
             local cid = otherPlayer.PlayerData.citizenid
             MySQL.Async.execute(query, {
                 otherPlayer.PlayerData.license,
@@ -197,8 +197,8 @@ RegisterServerEvent("snipe-menu:server:addAdminCar", function(carname, propertie
                 json.encode(properties),
                 properties.plate
             })
-        elseif Config.Core == "QBCore" and Config.Garage == "none" then
-            local otherPlayer = QBCore.Functions.GetPlayer(src)
+        elseif Config.Core == "DynCore" and Config.Garage == "none" then
+            local otherPlayer = DynCore.Functions.GetPlayer(src)
             local cid = otherPlayer.PlayerData.citizenid
             MySQL.Async.execute(query, {
                 otherPlayer.PlayerData.license,
@@ -241,7 +241,7 @@ CreateCallback("snipe-menu:server:getOutsideVehicles", function(source, cb)
     local returnData = {}
     local vehicleColumn = "vehicle"
     local query = 'SELECT * FROM '..Config.GarageTables[Config.Core].vehicle_table.. ' WHERE in_garage = ?'
-    if Config.Core == "QBCore" and Config.Garage == "none" then
+    if Config.Core == "DynCore" and Config.Garage == "none" then
         query = 'SELECT * FROM '..Config.GarageTables[Config.Core].vehicle_table.. ' WHERE state = ?'
     elseif Config.Core == "ESX" and Config.Garage == "none" then
         query = 'SELECT * FROM '..Config.GarageTables[Config.Core].vehicle_table.. ' WHERE stored = ?'
@@ -250,7 +250,7 @@ CreateCallback("snipe-menu:server:getOutsideVehicles", function(source, cb)
     local result = MySQL.query.await(query, { 0 })
     if result ~= nil then
         for k, v in pairs(result) do
-            if Config.Core == "QBCore" then
+            if Config.Core == "DynCore" then
                 returnData[#returnData + 1] = {
                     id = v.vehicle,
                     name = v.plate,
@@ -273,7 +273,7 @@ RegisterServerEvent("snipe-menu:server:changeVehicleState", function(plate)
     local src = source
     if src ~= 0 and onlineAdmins[src] then
         local query = 'UPDATE '..Config.GarageTables[Config.Core].vehicle_table.. ' SET in_garage = ? WHERE plate = ?'
-        if Config.Core == "QBCore" and Config.Garage == "none" then
+        if Config.Core == "DynCore" and Config.Garage == "none" then
             query = 'UPDATE '..Config.GarageTables[Config.Core].vehicle_table.. ' SET state = ? WHERE plate = ?'
         elseif Config.Core == "ESX" and Config.Garage == "none" then
             query = 'UPDATE '..Config.GarageTables[Config.Core].vehicle_table.. ' SET stored = ? WHERE plate = ?'

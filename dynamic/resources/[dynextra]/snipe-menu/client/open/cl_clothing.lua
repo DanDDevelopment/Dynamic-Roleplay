@@ -1,6 +1,6 @@
 -- if you have custom clothing script, make sure to add the events to load the players old clothes back when you click revert
 RegisterNetEvent("snipe-menu:client:revertClothing", function()
-    if Config.Core == "QBCore" then
+    if Config.Core == "DynCore" then
         if Config.Skin == "dyn-clothing" then
             TriggerServerEvent("dyn-clothing:server:loadPlayerSkin") -- LOADING PLAYER'S CLOTHES
             TriggerServerEvent("dyn-clothes:loadPlayerSkin") -- LOADING PLAYER'S CLOTHES

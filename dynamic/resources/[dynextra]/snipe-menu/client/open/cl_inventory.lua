@@ -1,5 +1,5 @@
 function OpenStash(stashName, owner)
-    if Config.Core == "QBCore" and Config.Inventory ~= "ox" then
+    if Config.Core == "DynCore" and Config.Inventory ~= "ox" then
         TriggerServerEvent("inventory:server:OpenInventory", "stash", stashName, {
             maxweight = 1000000,
             slots = 100,
@@ -39,7 +39,7 @@ function OpenStash(stashName, owner)
 end
 
 function OpenTrunk(vehicle, plate)
-    if Config.Core == "QBCore" and Config.Inventory ~= "ox" then
+    if Config.Core == "DynCore" and Config.Inventory ~= "ox" then
             local vehicleClass = GetVehicleClassFromName(GetHashKey(vehicle) --[[ Hash ]])
             local other = {
                 maxweight = 120000,
@@ -75,7 +75,7 @@ end
 
 function OpenGlovebox(plate)
     if hasAdminPerms then
-        if Config.Core == "QBCore" and Config.Inventory ~= "ox" then
+        if Config.Core == "DynCore" and Config.Inventory ~= "ox" then
             TriggerServerEvent("inventory:server:OpenInventory", "glovebox", plate, other)
             TriggerEvent("inventory:client:SetCurrentGlovebox", plate)
         elseif Config.Core == "ESX" and Config.Inventory == "qs" then
@@ -96,7 +96,7 @@ function OpenGlovebox(plate)
 end
 
 function openJobStash(data)
-    if Config.Core == "QBCore" and Config.Inventory ~= "ox" then
+    if Config.Core == "DynCore" and Config.Inventory ~= "ox" then
         TriggerServerEvent("inventory:server:OpenInventory", "stash", data.jobStashName, {
             maxweight = data.size,
             slots = data.slots,
@@ -133,7 +133,7 @@ end
 
 RegisterNetEvent("snipe-menu:client:openinventory", function(otherPlayer)
     if hasAdminPerms then
-        if Config.Core == "QBCore" and Config.Inventory ~= "ox" then
+        if Config.Core == "DynCore" and Config.Inventory ~= "ox" then
             TriggerServerEvent("inventory:server:OpenInventory", "otherplayer", otherPlayer)
         elseif Config.Core == "ESX" and Config.Inventory == "qs" then
             TriggerServerEvent("inventory:server:OpenInventory", "otherplayer", otherPlayer)

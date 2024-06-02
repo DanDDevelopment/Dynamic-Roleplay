@@ -6,13 +6,13 @@ For all support questions, ask in our [Discord](https://www.discord.gg/projectsl
 Do not create issues on GitHub if you need help. Issues are for bug reporting and new features only.
 
 # Depedency
-1. [dyn-core](https://github.com/qbcore-framework/dyn-core)
+1. [dyn-core](https://github.com/DynCore-framework/dyn-core)
 2. [ox_lib](https://github.com/overextended/ox_lib)
 3. [ps-mdt](https://github.com/Project-Sloth/ps-mdt) - Optional but highly recommended.
 
 # Installation
 * Download ZIP
-* Make sure your [dyn-core](https://github.com/qbcore-framework/dyn-core) is fully updated to the latest version.
+* Make sure your [dyn-core](https://github.com/DynCore-framework/dyn-core) is fully updated to the latest version.
 * Drag and drop resource into your server files
 * Start resource through server.cfg
 * Drag and drop sounds folder into interact-sound\client\html\sounds
@@ -134,11 +134,11 @@ Information about each parameter is in the `alerts.lua` file.
 
 # FAQ
 * There are no calls showing on dispatch or mdt list.
-  - Make sure you have a job type specified in your qbcore/shared/jobs.lua like:
+  - Make sure you have a job type specified in your DynCore/shared/jobs.lua like:
   
     ![image](https://github.com/Project-Sloth/ps-dispatch/assets/9503151/7834e878-5020-4fcc-8864-03d44120c160)
 
-  - Make sure that you're using the correct job type as leo and make sure your [dyn-core](https://github.com/qbcore-framework/dyn-core) is fully updated to the latest version.
+  - Make sure that you're using the correct job type as leo and make sure your [dyn-core](https://github.com/DynCore-framework/dyn-core) is fully updated to the latest version.
   - On shared/config.lua make set Config.Debug = true to test calls as police officer.(ONLY to be used as testing, make sure to disable on live production)
 
 * How to change colors of the calls? 

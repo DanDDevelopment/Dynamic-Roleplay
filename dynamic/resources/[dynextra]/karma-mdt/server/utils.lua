@@ -1,4 +1,4 @@
-local QBCore = exports['dyn-core']:GetCoreObject()
+local DynCore = exports['dyn-core']:GetCoreObject()
 
 local CodeID = {
 	codeName = 'Karma Development 4.0 - MDT System',
@@ -10,7 +10,7 @@ local CodeID = {
   end)
 
 function GetPlayerData(source)
-	local Player = QBCore.Functions.GetPlayer(source)
+	local Player = DynCore.Functions.GetPlayer(source)
 	if Player == nil then return end -- Player not loaded in correctly
 	return Player.PlayerData
 end
