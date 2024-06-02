@@ -1,4 +1,4 @@
-# pug-sling 2.0
+# dyn-sling 2.0
 
 # -- If you are using illenium-appearance make sure to head to illenium-appearance/server/server.lua and replace these commands with these.
 lib.addCommand("reloadskin", { help = _L("commands.reloadskin.title") }, function(source)

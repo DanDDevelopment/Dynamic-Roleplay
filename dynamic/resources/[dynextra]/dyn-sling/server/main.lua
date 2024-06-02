@@ -10,7 +10,7 @@ if not Config.UseOldSlingScript then
         if Personal then
             local Player = FWork.Functions.GetPlayer(src)
             if Player ~= nil then
-                Player.Functions.SetMetaData("pug-weapondata", JsonWeapons)
+                Player.Functions.SetMetaData("dyn-weapondata", JsonWeapons)
                 Player.Functions.Save()
             end
         else

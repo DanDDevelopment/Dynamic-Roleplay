@@ -3,7 +3,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'Discord: zpug'
-description 'pug-sling'
+description 'dyn-sling'
 version '2.0.9'
 
 shared_scripts { 

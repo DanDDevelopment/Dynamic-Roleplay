@@ -43,7 +43,7 @@ if not Config.UseOldSlingScript then
             model = "w_ar_carbinerifle",           
             Attachments = { 
                  ["COMPONENT_CARBINERIFLE_CLIP_01"] = {Base = 'WAPClip',Component = "W_AR_CARBINERIFLE_MAG1"},
-                 ["COMPONENT_CARBINERIFLE_CLIP_02"] = {Base = 'WAPClip',Component = "W_AR_CARBINERIFLE_MAG2"},
+            --     ["COMPONENT_CARBINERIFLE_CLIP_02"] = {Base = 'WAPClip',Component = "W_AR_CARBINERIFLE_MAG2"},
             --     ["COMPONENT_AT_AR_FLSH"] = {Base = 'WAPFlshLasr',Component = "W_AT_AR_FLSH"},
             --     ["COMPONENT_AT_SCOPE_MEDIUM"] = {Base = 'WAPScop',Component = "W_AT_SCOPE_MEDIUM"},
             --     ["COMPONENT_AT_AR_SUPP"] = {Base = 'WAPSupp', Component = "W_AT_AR_SUPP"},
