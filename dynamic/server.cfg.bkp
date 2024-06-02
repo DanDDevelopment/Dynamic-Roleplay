@@ -54,11 +54,12 @@ ensure baseevents
 # DynFW & Extra stuff
 ensure dyn-core
 ensure ox_lib
-ensure [dyn]
+ensure [dyncore]
 ensure [dynextra]
+ensure [dynui]
+ensure [dynspawn]
 ensure [standalone]
 ensure [voice]
-ensure [defaultmaps]
 ensure [dynmaps]
 ensure [dyncars]
 
