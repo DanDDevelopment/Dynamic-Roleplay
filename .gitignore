@@ -1,3 +1,4 @@
 *.log
 /dynamic/db
 /dynamic/cache
+/TxData/default
