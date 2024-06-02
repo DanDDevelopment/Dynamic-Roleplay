@@ -27,7 +27,6 @@ Config.WeapDraw = {
     weapons = {
         --'WEAPON_STUNGUN',
         'WEAPON_PISTOL',
-        'WEAPON_MICROSMG2',
         'WEAPON_PISTOL_MK2',
         'WEAPON_COMBATPISTOL',
         'WEAPON_APPISTOL',
