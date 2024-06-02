@@ -25,6 +25,8 @@ sets sv_projectName "Dynamic Roleplay | Join us at Discord.gg/DynamicRP"
 sets sv_projectDesc "An a FiveM RP framework designed to best fit your roleplay experiances"
 sets locale "en-US"
 load_server_icon myLogo.png
+sets banner_detail "https://media.discordapp.net/attachments/1246097610327199816/1246723186947784815/ServerBanner1865x108.png"
+sets banner_connecting "https://media.discordapp.net/attachments/1246097610327199816/1246724023820488755/ServerBannerLoading.png"
 set sv_enforceGameBuild 2944
 set mysql_connection_string "mysql://root@localhost/dynamicrp?charset=utf8mb4"
 
@@ -60,6 +62,7 @@ ensure [dynui]
 ensure [dynspawn]
 ensure [standalone]
 ensure [voice]
+ensure [dynclothes]
 ensure [dynmaps]
 ensure [dyncars]
 
