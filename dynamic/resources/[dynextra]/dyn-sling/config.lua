@@ -138,10 +138,10 @@ if not Config.UseOldSlingScript then
             --     ["COMPONENT_CARBINERIFLE_MK2_CAMO"] = {Base = 'Cosmetic', Component = "w_at_cr_camo1"},
             -- }
         },
-        ["weapon_katana"] = { 
-            model = "w_me_katana",
-            -- Attachments = {
-            --     ["COMPONENT_HUNTINGRIFLE_CLIP_01"] = {Base = 'WAPClip', Component = "w_sr_huntingrifle_mag1"},
+        ["weapon_m4"] = { 
+            model = "w_ar_m4",
+             Attachments = {
+                 ["COMPONENT_M4_CLIP_01"] = {Base = 'WAPClip', Component = "w_ar_m4_mag1"},
             --     ["COMPONENT_CARBINERIFLE_MK2_CLIP_02"] = {Base = 'WAPClip', Component = "w_ar_carbineriflemk2_mag2"},
             --     ["COMPONENT_AT_AR_FLSH"] = {Base = 'WAPFlshLasr', Component = "W_AT_AR_FLSH"},
             --     ["COMPONENT_AT_SIGHTS"] = {Base = 'WAPScop', Component = "w_at_sights_1"},
@@ -149,7 +149,7 @@ if not Config.UseOldSlingScript then
             --     ["COMPONENT_AT_MUZZLE_01"] = {Base = 'WAPSupp', Component = "w_at_muzzle_1"},
             --     ["COMPONENT_AT_AR_AFGRIP_02"] = {Base = 'WAPGrip', Component = "w_at_afgrip_2"},
             --     ["COMPONENT_CARBINERIFLE_MK2_CAMO"] = {Base = 'Cosmetic', Component = "w_at_cr_camo1"},
-            -- }
+             }
         },
         ["weapon_assaultrifle"] = { 
             model = "w_ar_assaultrifle",
