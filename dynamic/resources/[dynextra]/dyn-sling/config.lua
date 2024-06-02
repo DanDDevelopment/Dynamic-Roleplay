@@ -109,6 +109,17 @@ if not Config.UseOldSlingScript then
             --     ["COMPONENT_AT_AR_AFGRIP"] = {Base = 'WAPGrip', Component = "W_AT_AR_AFGRIP"},
              }
         },
+        ["weapon_microsmg2"] = { 
+            model = "w_sb_uzi",
+            -- Attachments = {
+            --     ["COMPONENT_BULLPUPRIFLE_CLIP_01"] = {Base = 'WAPClip', Component = "w_ar_bullpuprifle_mag1"},
+            --     ["COMPONENT_BULLPUPRIFLE_CLIP_02"] = {Base = 'WAPClip', Component = "w_ar_bullpuprifle_mag2"},
+            --     ["COMPONENT_AT_AR_FLSH"] = {Base = 'WAPFlshLasr', Component = "W_AT_AR_FLSH"},
+            --     ["COMPONENT_AT_SCOPE_SMALL"] = {Base = 'WAPScop', Component = "w_at_scope_small"},
+            --     ["COMPONENT_AT_AR_SUPP"] = {Base = 'WAPSupp', Component = "w_at_ar_supp"},
+            --     ["COMPONENT_AT_AR_AFGRIP"] = {Base = 'WAPGrip', Component = "W_AT_AR_AFGRIP"},
+            -- }
+        },
         ["weapon_advancedrifle"] = {
             model = "w_ar_advancedrifle",           
              Attachments = {

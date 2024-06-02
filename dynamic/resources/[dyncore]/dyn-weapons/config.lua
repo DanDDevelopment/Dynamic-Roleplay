@@ -27,6 +27,7 @@ Config.WeapDraw = {
     weapons = {
         --'WEAPON_STUNGUN',
         'WEAPON_PISTOL',
+        'WEAPON_MICROSMG2',
         'WEAPON_PISTOL_MK2',
         'WEAPON_COMBATPISTOL',
         'WEAPON_APPISTOL',
@@ -90,6 +91,7 @@ Config.DurabilityMultiplier = {
 
     -- Submachine Guns
     weapon_microsmg              = 0.15,
+    weapon_microsmg2             = 0.15,
     weapon_smg                   = 0.15,
     weapon_smg_mk2               = 0.15,
     weapon_assaultsmg            = 0.15,
@@ -186,6 +188,7 @@ Config.WeaponRepairCosts = {
 WeaponAttachments = {
     clip_attachment = {
         weapon_pistol = `COMPONENT_PISTOL_CLIP_02`,
+    
         weapon_pistol_mk2 = `COMPONENT_PISTOL_MK2_CLIP_02`,
         weapon_combatpistol = `COMPONENT_COMBATPISTOL_CLIP_02`,
         weapon_appistol = `COMPONENT_APPISTOL_CLIP_02`,
@@ -196,6 +199,7 @@ WeaponAttachments = {
         weapon_vintagepistol = `COMPONENT_VINTAGEPISTOL_CLIP_02`,
         weapon_ceramicpistol = `COMPONENT_CERAMICPISTOL_CLIP_02`,
         weapon_microsmg = `COMPONENT_MICROSMG_CLIP_02`,
+        weapon_microsmg2 = `w_sb_uzi_mag1`,
         weapon_smg = `COMPONENT_SMG_CLIP_02`,
         weapon_assaultsmg = `COMPONENT_ASSAULTSMG_CLIP_02`,
         weapon_minismg = `COMPONENT_MINISMG_CLIP_02`,

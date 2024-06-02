@@ -25,8 +25,8 @@ sets sv_projectName "Dynamic Roleplay | Join us at Discord.gg/DynamicRP"
 sets sv_projectDesc "An a FiveM RP framework designed to best fit your roleplay experiances"
 sets locale "en-US"
 load_server_icon myLogo.png
-sets banner_detail "https://media.discordapp.net/attachments/1246097610327199816/1246723186947784815/ServerBanner1865x108.png"
-sets banner_connecting "https://media.discordapp.net/attachments/1246097610327199816/1246724023820488755/ServerBannerLoading.png"
+sets banner_detail "https://media.discordapp.net/attachments/1246097610327199816/1246723186947784815/ServerBanner1865x108.png?ex=665d6cf2&is=665c1b72&hm=a24b5bf7b83a2c5788080b1274b5f2ecfa525fcc2af6138e4ca5f934b8f6ff1d&=&quality=lossless"
+sets banner_connecting "https://media.discordapp.net/attachments/1246097610327199816/1246724023820488755/ServerBannerLoading.png?ex=665d6dba&is=665c1c3a&hm=e769d54b05777965f9f85b75f0738e442d4a0800f15af1bc082cffec07e82750&=&quality=lossless"
 set sv_enforceGameBuild 2944
 set mysql_connection_string "mysql://root@localhost/dynamicrp?charset=utf8mb4"
 
