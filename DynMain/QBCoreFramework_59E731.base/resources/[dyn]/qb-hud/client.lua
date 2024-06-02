@@ -1035,7 +1035,7 @@ end)
 CreateThread(function()
     while true do
         SetRadarBigmapEnabled(false, false)
---        SetRadarZoom(1000)
+        SetRadarZoom(1100)
         Wait(500)
     end
 end)
