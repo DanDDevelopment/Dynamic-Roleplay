@@ -114,7 +114,7 @@ RegisterNetEvent("snipe-menu:client:refuelVehicle", function()
             if Config.Fuel == "legacy" then
                 exports["LegacyFuel"]:SetFuel(vehicle, 100.0)
             elseif Config.Fuel == "ps" then
-                exports["ps-fuel"]:SetFuel(vehicle, 100.0)
+                exports["dyn-fuel"]:SetFuel(vehicle, 100.0)
             elseif Config.Fuel == "ox" then
                 Entity(vehicle).state.fuel = 100.0
             elseif Config.Fuel == "cdn" then

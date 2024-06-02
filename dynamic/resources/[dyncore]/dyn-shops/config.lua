@@ -2,7 +2,7 @@ Config = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 
 -- Deliveries
-Config.ShopsInvJsonFile = './json/shops-inventory.json'
+Config.ShopsInvJsonFile = './json/dyn-inventory.json'
 Config.TruckDeposit = 125
 Config.MaxDeliveries = 20
 Config.DeliveryPrice = 500

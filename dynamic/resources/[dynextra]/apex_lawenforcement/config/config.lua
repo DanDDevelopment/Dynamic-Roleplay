@@ -150,7 +150,7 @@ Config.Features = {
     },
     BreakoutMinigame = true,
     BreakoutMinigameSettings = {-- You can NOT have CircleMinigame and SkillbarMinigame both true.
-        CircleMinigame = true, -- This requires: 'ps-ui': https://github.com/Project-Sloth/ps-ui
+        CircleMinigame = true, -- This requires: 'dyn-ui': https://github.com/Project-Sloth/dyn-ui
         Time = 15,
         Circles = 1,
         ------------------------------------

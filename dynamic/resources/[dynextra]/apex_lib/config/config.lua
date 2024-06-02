@@ -83,7 +83,7 @@ ApexConfig.Input = 'dyn-input'
 --[[
     - dyn-inventory
     - lj-inventory
-    - ps-inventory
+    - dyn-inventory
     - qs-inventory
     - ox_inventory
     - codem-inventory (Currently Unavailable)
@@ -140,12 +140,12 @@ ApexConfig.Clothing = 'dyn-clothing'
 -- MDT SYSTEMS
 -------------------------------------
 --[[
-    - ps-mdt
+    - dyn-mdt
     - al_mdt
     - qs-mdt
     - redutzu-mdt
 ]]--
-ApexConfig.MDT = 'ps-mdt'
+ApexConfig.MDT = 'dyn-mdt'
 -------------------------------------
 
 
@@ -153,11 +153,11 @@ ApexConfig.MDT = 'ps-mdt'
 -------------------------------------
 --[[
     - DynCore
-    - ps-dispatch
+    - dyn-dispatch
     - qs-dispatch
     - cd_dispatch
 ]]--
-ApexConfig.Dispatch = 'ps-dispatch'
+ApexConfig.Dispatch = 'dyn-dispatch'
 -------------------------------------
 
 
@@ -178,7 +178,7 @@ ApexConfig.Phone = 'dyn-phone'
 --[[
     - LegacyFuel
     - esx-sna-fuel
-    - ps-fuel
+    - dyn-fuel
     - lj-fuel
     - cdn-fuel
     - qs-fuelstations

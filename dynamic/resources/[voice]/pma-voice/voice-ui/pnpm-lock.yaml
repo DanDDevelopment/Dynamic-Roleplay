@@ -3074,7 +3074,7 @@ packages:
       sshpk: 1.17.0
     dev: true
 
-  /https-browserify/1.0.0:
+  /httdyn-browserify/1.0.0:
     resolution: {integrity: sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=}
     dev: true
 
@@ -4134,7 +4134,7 @@ packages:
       crypto-browserify: 3.12.0
       domain-browser: 1.2.0
       events: 3.3.0
-      https-browserify: 1.0.0
+      httdyn-browserify: 1.0.0
       os-browserify: 0.3.0
       path-browserify: 0.0.1
       process: 0.11.10

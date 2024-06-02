@@ -46,11 +46,11 @@ This completely configurable script consist of:
 ● dyn-inventory support.
 ● ox_inventory support.
 ● qs-inventory support.
-● ps-inventory support.
+● dyn-inventory support.
 ● Request inventory support and i will do it for this script if it is possible.
 
 Requirements consist of:
 DynCore OR ESX (other frameworks will work but not supported)
-dyn-inventory OR ox_inventory OR qs-inventory OR ps-inventory (any dyn-inventory resource name changed will work)
+dyn-inventory OR ox_inventory OR qs-inventory OR dyn-inventory (any dyn-inventory resource name changed will work)
 
 1400 LINES OF CODE

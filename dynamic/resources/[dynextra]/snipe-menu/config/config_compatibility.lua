@@ -35,7 +35,7 @@ Config.Chat = "none" -- "none", "okok", "codem"
 Config.WeatherScript = "none" -- "none", "cd_easytime"
 
 -- legacy is for legacyfuel
--- ps is for ps-fuel
+-- ps is for dyn-fuel
 -- ox is for ox-fuel
 -- cdn is for cdn-fuel
 -- other is for other fuel scripts (you need to configure in cl_vehicles_customise.lua)

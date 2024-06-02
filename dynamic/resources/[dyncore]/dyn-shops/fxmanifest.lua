@@ -24,4 +24,4 @@ client_scripts {
 
 server_script 'server/main.lua'
 
-file 'json/shops-inventory.json'
+file 'json/dyn-inventory.json'

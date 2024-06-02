@@ -73,7 +73,7 @@ end)
 
 RegisterNetEvent("snipe-menu:client:toggleDev", function()
     if hasAdminPerms then
-        TriggerEvent("dyn-admin:client:ToggleDevmode") -- used to toggle the dev mode ui on hud if you use ps-hud
+        TriggerEvent("dyn-admin:client:ToggleDevmode") -- used to toggle the dev mode ui on hud if you use dyn-hud
     end
 end)
 

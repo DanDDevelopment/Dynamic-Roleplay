@@ -65,8 +65,8 @@ if not Config.UseOldSlingScript then
             end
         elseif GetResourceState("dyn-inventory") == 'started' then
             return exports['dyn-inventory']:HasItem(Weapon)
-        elseif GetResourceState("ps-inventory") == 'started' then
-            return exports['ps-inventory']:HasItem(Weapon)
+        elseif GetResourceState("dyn-inventory") == 'started' then
+            return exports['dyn-inventory']:HasItem(Weapon)
         elseif GetResourceState("ox_inventory") == 'started' then
             local count = exports.ox_inventory:GetItemCount(Weapon)
             if count > 0 then
@@ -96,7 +96,7 @@ if not Config.UseOldSlingScript then
                 --IS EMERGENCY VEHICLE
                 if GetVehicleClass(veh) == 18 then
                     if Framework == "ESX" then
-                        if GetResourceState("dyn-inventory") == 'started' or GetResourceState("ps-inventory") == 'started' then
+                        if GetResourceState("dyn-inventory") == 'started' or GetResourceState("dyn-inventory") == 'started' then
                             TriggerEvent("inventory:client:SetCurrentStash", "Rack".. plate)
                             TriggerServerEvent("inventory:server:OpenInventory", "stash", "Rack" .. plate, {
                                 maxweight = Config.RackMaxWeight,
@@ -119,7 +119,7 @@ if not Config.UseOldSlingScript then
                             anim = "idle",
                             flags = 49,
                         }, {}, {}, function()
-                            if GetResourceState("dyn-inventory") == 'started' or GetResourceState("ps-inventory") == 'started' then
+                            if GetResourceState("dyn-inventory") == 'started' or GetResourceState("dyn-inventory") == 'started' then
                                 TriggerEvent("inventory:client:SetCurrentStash", "Rack".. plate)
                                 TriggerServerEvent("inventory:server:OpenInventory", "stash", "Rack" .. plate, {
                                     maxweight = Config.RackMaxWeight,
