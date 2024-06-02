@@ -52,7 +52,7 @@ local Translations = {
     },
 }
 
-if GetConvar('qb_locale', 'en') == 'et' then
+if GetConvar('dyn_locale', 'en') == 'et' then
     Lang = Locale:new({
         phrases = Translations,
         warnOnMissing = true,

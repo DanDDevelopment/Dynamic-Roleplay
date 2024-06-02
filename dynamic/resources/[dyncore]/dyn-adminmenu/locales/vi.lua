@@ -270,7 +270,7 @@ local Translations = {
     }
 }
 
-if GetConvar('qb_locale', 'en') == 'vi' then
+if GetConvar('dyn_locale', 'en') == 'vi' then
     Lang = Locale:new({
         phrases = Translations,
         warnOnMissing = true,

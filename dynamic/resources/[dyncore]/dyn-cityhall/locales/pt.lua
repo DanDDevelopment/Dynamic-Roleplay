@@ -25,7 +25,7 @@ local Translations = {
         message = 'Olá %{gender} %{lastname}<br /><br />Acabamos de receber uma mensagem de que alguém quer fazer aulas de condução<br />Se quiser fazer de instructor por favor contacte-nos:<br />Nome: <strong>%{firstname} %{lastname}</strong><br />Telemóvel: <strong>%{phone}</strong><br/><br/>Melhores Cumprimentos,<br />Serviços Municipais'
     }
 }
-if GetConvar('qb_locale', 'en') == 'pt' then
+if GetConvar('dyn_locale', 'en') == 'pt' then
     Lang = Locale:new({
         phrases = Translations,
         warnOnMissing = true,

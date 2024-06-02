@@ -1,11 +1,11 @@
-local QBCore = exports['dyn-core']:GetCoreObject()
+local DynCore = exports['dyn-core']:GetCoreObject()
 local walkstyle = 'default'
 local walktable = {}
 local walkpause = false
 
-RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
+RegisterNetEvent("DynCore:Client:OnPlayerLoaded", function()
     Wait(2000)
-    local PlayerData = QBCore.Functions.GetPlayerData()
+    local PlayerData = DynCore.Functions.GetPlayerData()
     local savedwalk = GetResourceKvpString('walkstyles')
     if savedwalk then walktable = json.decode(savedwalk) end
 
@@ -21,7 +21,7 @@ end)
 AddEventHandler('onResourceStart', function(resourceName)
     if GetCurrentResourceName() ~= resourceName then return end
     Wait(2000)
-    local PlayerData = QBCore.Functions.GetPlayerData()
+    local PlayerData = DynCore.Functions.GetPlayerData()
     local savedwalk = GetResourceKvpString('walkstyles')
     if savedwalk then walktable = json.decode(savedwalk) end
 
@@ -53,7 +53,7 @@ RegisterNetEvent('dyn-walks:set', function(data)
     local anim = Config.WalkingSyles[data.id]
 	walkstyle = anim
 	SetWalks(anim)
-    local PlayerData = QBCore.Functions.GetPlayerData()
+    local PlayerData = DynCore.Functions.GetPlayerData()
     walktable[PlayerData.citizenid] = anim
     saveWalks()
 end)

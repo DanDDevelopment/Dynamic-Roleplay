@@ -128,7 +128,7 @@ local Translations = {
     }
 }
 
-if GetConvar('qb_locale', 'en') == 'sk' then
+if GetConvar('dyn_locale', 'en') == 'sk' then
     Lang = Locale:new({
         phrases = Translations,
         warnOnMissing = true,

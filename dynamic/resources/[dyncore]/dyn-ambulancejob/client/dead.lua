@@ -81,7 +81,7 @@ function DeathTimer()
 end
 
 local function DrawTxt(x, y, width, height, scale, text, r, g, b, a, _)
-    if GetConvar('qb_locale', 'en') == 'en' then
+    if GetConvar('dyn_locale', 'en') == 'en' then
         SetTextFont(4)
     else
         SetTextFont(1)
