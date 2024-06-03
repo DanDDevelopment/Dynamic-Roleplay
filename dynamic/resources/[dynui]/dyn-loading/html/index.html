@@ -183,7 +183,7 @@
 
                         <!-- This is where you want to replace with your logo -->
 
-                        <img class="cursor-none brand-logo" src="/assets/branding/DynCore.svg"></img>
+                        <img class="cursor-none brand-logo" src="/assets/branding/DynCore.png"></img>
                         <q-space></q-space>
                         <q-btn :ripple="false" flat size="xl" icon="downloading" color="white" @click="download = true"></q-btn>
                         <div class="loadingbar">
@@ -195,22 +195,6 @@
             </div>
 
             <q-dialog no-shake v-model="download" position="bottom">
-                <q-card style="max-width: 400px; margin-left: 50vw; margin-bottom: 13vh;">
-                    <q-card-section>
-                        <div style="white-space: pre-wrap;" class="text-h6">
-                            {{ DownloadTitle }}
-                        </div>
-                    </q-card-section>
-
-                    <q-card-section style="white-space: pre-wrap;" class="q-pt-none text-weight-bold">
-                        {{ DownloadDesc }}
-                    </q-card-section>
-
-                    <q-card-actions align="left">
-                        <q-btn flat label="Hide details" color="detailbutton" v-close-popup></q-btn>
-                    </q-card-actions>
-                </q-card>
-            </q-dialog>
 
             <q-dialog no-shake v-model="settings" position="right">
                 <q-card style="max-width: 300px; margin-right: 3.4vw; top: 20vh!important;">

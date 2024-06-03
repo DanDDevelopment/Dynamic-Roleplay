@@ -16,13 +16,13 @@ endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
 sv_maxclients 48
 set steam_webApiKey "none"
-sets tags "default, deployer, DynCore, qb-core"
+sets tags "default,"
 
 ## You MAY edit the following:
 sv_licenseKey "cfxk_1rTSdgRGkWJbZMkQE4ZfV_46o7yR"
 sv_hostname "Dynamic Roleplay"
 sets sv_projectName "Dynamic Roleplay | Join us at Discord.gg/DynamicRP"
-sets sv_projectDesc "An a FiveM RP framework designed to best fit your roleplay experiances"
+sets sv_projectDesc "A a FiveM RP framework designed to best fit your roleplay experiances"
 sets locale "en-US"
 load_server_icon myLogo.png
 sets banner_detail "https://media.discordapp.net/attachments/1246097610327199816/1246723186947784815/ServerBanner1865x108.png?ex=665d6cf2&is=665c1b72&hm=a24b5bf7b83a2c5788080b1274b5f2ecfa525fcc2af6138e4ca5f934b8f6ff1d&=&quality=lossless"
@@ -72,6 +72,7 @@ add_ace group.admin command allow # allow all commands
 add_principal identifier.fivem:8846237 group.admin #DanDiablosTV
 add_principal identifier.discord:608284540317728786 group.admin #DanDiablosTV
 add_principal identifier.fivem:8846237 DynCore.god #DanDiablosTV
+add_principal identifier.discord:1018531188585013268 group.admin #alekhd
 # Resources
 add_ace resource.qb-core command allow # Allow qb-core to execute commands
 

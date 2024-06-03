@@ -1,1 +1,40 @@
-[{"name":"DanDiablosTV","master":true,"password_hash":"$2a$11$s1.lJ0cTVRpCW7WKESCPkeha26BYhZC7J4l8Pl4dIqQrOX6x/viu.","providers":{"citizenfx":{"id":"DanDiablosTV","identifier":"fivem:8846237","data":{"name":"DanDiablosTV","profile":"https://forum.cfx.re/u/DanDiablosTV","nameid":"https://forum.cfx.re/internal/user/8846237","picture":"https://forum.cfx.re/user_avatar/forum.cfx.re/dandiablostv/256/2055297_2.png"}},"discord":{"id":"608284540317728786","identifier":"discord:608284540317728786","data":{}}},"permissions":[]}]
+[
+  {
+    "name": "DanDiablosTV",
+    "master": true,
+    "password_hash": "$2a$11$s1.lJ0cTVRpCW7WKESCPkeha26BYhZC7J4l8Pl4dIqQrOX6x/viu.",
+    "providers": {
+      "citizenfx": {
+        "id": "DanDiablosTV",
+        "identifier": "fivem:8846237",
+        "data": {
+          "name": "DanDiablosTV",
+          "profile": "https://forum.cfx.re/u/DanDiablosTV",
+          "nameid": "https://forum.cfx.re/internal/user/8846237",
+          "picture": "https://forum.cfx.re/user_avatar/forum.cfx.re/dandiablostv/256/2055297_2.png"
+        }
+      },
+      "discord": {
+        "id": "608284540317728786",
+        "identifier": "discord:608284540317728786",
+        "data": {}
+      }
+    },
+    "permissions": []
+  },
+  {
+    "name": "AleksNHD",
+    "master": false,
+    "password_hash": "$2a$11$us8oBkivJlFF7i94ZoXm9uN.9sh9rXED75AyrbH.EYfqTlIW29Zee",
+    "providers": {
+      "discord": {
+        "id": "1018531188585013268",
+        "identifier": "discord:1018531188585013268",
+        "data": {}
+      }
+    },
+    "permissions": [
+      "all_permissions"
+    ]
+  }
+]
