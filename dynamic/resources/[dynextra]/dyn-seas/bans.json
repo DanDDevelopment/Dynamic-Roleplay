@@ -1,1 +1,27 @@
-{}
+{
+    "1": {
+        "steam": "Invalid",
+        "ip": "85.203.210.250",
+        "xbl": "Invalid",
+        "live": "Invalid",
+        "manual": false,
+        "license": "license:0352467448e59eb29c4d97c9627eb4a65af53dea",
+        "discord": "1018531188585013268",
+        "tokens": [
+            "3:654c424ee9d7a68d05f9c2b99efb365b6046243fffbbd877b8d64e9742803a11",
+            "5:5842fb54cda112d3ff8afbbe26f56230800188cc686f9b24b509ece79bb8b832",
+            "2:972eb17cc6540d62967ab1b07a88ddf5c501823e2f6086e262fd49f5864f7708",
+            "4:191b2e25c0045ecc72b4a24adda89f651ccc542bcda999606246ce22baa1e078",
+            "4:5af54cc177b41f7b1d562da184860e67d15553b4484845a216d2906459becb2c",
+            "4:bcc307c21d5f8b1505fe6b59e09152a7aa03164a3f194460c893c5932190ab38"
+        ],
+        "fg_ts": {
+            "t1": "80c098ac9a4db5438b7127028f1c050510ff3aabd845e1a9730fc2f82a59e408",
+            "t2": "5c68a759:173a86f5:51ad9804:bdc5a418:07a52994:a957ea78:1af75e9d:17f59767:6ef6166a:d01e7a61:d154bd04:de8e9d7a",
+            "t3": "EvBMIyscqzHNKqSTpTmG6r7w73xAKgrc",
+            "t4": "14868014611485306410"
+        },
+        "reason": "Explosive Ammo",
+        "name": "AleksNHD"
+    }
+}

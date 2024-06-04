@@ -36,5 +36,21 @@
     "permissions": [
       "all_permissions"
     ]
+  },
+  {
+    "name": "sheamus",
+    "master": false,
+    "password_hash": "$2a$11$sB.HZnp8zmlATgYHvAv3V.vbCj2DxToCku6zqcy2u7KzX1o0UxjA2",
+    "password_temporary": true,
+    "providers": {
+      "discord": {
+        "id": "972891023997034537",
+        "identifier": "discord:972891023997034537",
+        "data": {}
+      }
+    },
+    "permissions": [
+      "all_permissions"
+    ]
   }
 ]
