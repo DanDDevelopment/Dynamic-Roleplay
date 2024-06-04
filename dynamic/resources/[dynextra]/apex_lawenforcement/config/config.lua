@@ -47,7 +47,7 @@ Config.Blips = {
         -- },
     },
     ColleagueBlips = { -- We suggest disabling this, if using a dispatch, that has blips included.
-        enabled = true,
+        enabled = false,
         sprite = 1,
         scale = 0.6,
         colour = 38,
@@ -111,7 +111,7 @@ Config.Features = {
         SpikeStripCommand = "spike",
         MaxSpikes = 10,
     },
-    GunRack = true,
+    GunRack = false,
     GunRackSettings = {
         GunrackItem = 'gunrack',
         InstallDuration = 5,
@@ -398,8 +398,8 @@ Config.Features = {
         TeleportIntoVehicle = true,
         -- Missin Row (Gabz Garage)
         {
-            spawner = vector4(446.00, -978.61, 25.706, 90.171),
-            spawnpoint = vector4(445.012, -973.033, 25.706, 265.718),
+            spawner = vector4(448.22, -1019.249, 28.532, 94.652),
+            spawnpoint = vector4(442.082, -1020.11, 28.638, 93.591),
             vehicles = {
                 [1] = { vehiclename = 'Police 1', vehiclemodel = 'police', grade = 0 },
                 [2] = { vehiclename = 'Police 2', vehiclemodel = 'police2', grade = 1 },
